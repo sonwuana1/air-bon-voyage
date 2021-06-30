@@ -9,6 +9,8 @@ import { ModalProvider } from "./context/Modal";
 import configureStore from './store';
 import { restoreCSRF, csrfFetch } from './store/csrf';
 import * as sessionActions from './store/session';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 const store = configureStore();
