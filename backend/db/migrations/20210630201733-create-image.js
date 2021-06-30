@@ -10,7 +10,7 @@ module.exports = {
       },
       link: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING(1234)
       },
       user_id: {
         references: { model: 'Users' },
