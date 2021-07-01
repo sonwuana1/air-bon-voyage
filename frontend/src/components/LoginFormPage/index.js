@@ -33,7 +33,13 @@ function LoginFormPage() {
   }
 
   return (
-    <div>
+    <div
+      style={{
+        backgroundImage: "./pic2.jpg",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+        backgroundSize: "cover",
+      }}>
       <Container>
         <Row>
           <Col sm={4}>
