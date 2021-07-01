@@ -41,6 +41,18 @@ const ViewAllSpots = () => {
             <p>Number of beds: {spotState.num_of_beds}</p>
             <p>Number of baths: {spotState.num_of_baths}</p>
 
+            <div>
+                <h3>Reviews</h3>
+                {spotState.Reviews?.map(review => {
+                    return(
+                        <div>
+                            <p>Rating: {review.rating}</p>
+                            <p>{review.content}</p>
+                        </div>
+                    )
+                })}
+            </div>
+
         </div>
     )
 }
