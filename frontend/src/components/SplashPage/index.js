@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 // import { Redirect, useParams } from "react-router";
 import { NavLink, useHistory } from "react-router-dom";
 // import {useDispatch} from 'react-redux';
+import './Splash.css';
+
 
 
 
@@ -14,7 +16,7 @@ function Splash() {
 
     return (
         <div>
-        <h1 >Welcome to Air Bon Voyage!</h1>
+            <h1 >Welcome to Air Bon Voyage!</h1>
 
         </div>
     );
