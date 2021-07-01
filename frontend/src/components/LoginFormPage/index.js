@@ -22,6 +22,14 @@ function LoginFormPage() {
     <Redirect to="/" />
   );
 
+  const DemoLogin = async (e) => {
+    e.preventDefault();
+    const data = await dispatch(sessionActions.login({credential:'demo@user.io', password:'password'}));
+    if (data.errors) {
+      setErrors(data.errors);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
@@ -68,6 +76,9 @@ function LoginFormPage() {
               </Form.Group> */}
               <Button variant="primary" type="submit">
                 Login
+              </Button>
+              <Button variant="primary" type="button" onClick={DemoLogin}>
+                Demo User
               </Button>
             </Form>
           </Col>
