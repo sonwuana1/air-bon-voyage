@@ -29,5 +29,41 @@ router.get('/:id', requireAuth, asyncHandler(async (req, res) => {
 }))
 
 
+router.post('/', requireAuth, asyncHandler(async (req, res) => {
+
+    const { link, spot_id, review_id } = req.body
+    const newPhoto = await Image.create({
+        link,
+        user_id: req.user.id,
+        spot_id,
+        review_id
+    })
+
+    return res.json(newPhoto)
+}))
+
+
+router.put('/:id', requireAuth, asyncHandler(async (req, res) => {
+    const currentPhoto = await Image.findByPk(req.params.id)
+
+    if (currentPhoto) {
+        const { link } = req.body
+        await currentPhoto.update({ link })
+        return res.json(currentPhoto)
+    }
+}))
+
+
+router.delete('/:id', requireAuth, asyncHandler(async (req, res) => {
+
+    const removedPhoto = await Image.findByPk(req.params.id)
+
+    if (removedPhoto) {
+        await removedPhoto.destroy()
+        return res.json(removedPhoto)
+    }
+}))
+
+
 
 module.exports = router;
