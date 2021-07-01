@@ -2,7 +2,7 @@ const express = require('express')
 const asyncHandler = require('express-async-handler');
 
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
-const { Booking, Spot, Review, Image } = require('../../db/models');
+const { Spot, Review, Image } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
@@ -29,6 +29,45 @@ router.get('/:id', requireAuth, asyncHandler(async (req, res) => {
     })
 
     return res.json(oneReviewById)
+}))
+
+
+router.post('/', requireAuth, asyncHandler(async (req, res) => {
+
+    const { rating, content, spot_id } = req.body
+    const newReview = await Review.create({
+        rating,
+        content,
+        user_id: req.user.id,
+        spot_id
+    })
+
+    return res.json(newReview)
+}))
+
+
+router.put('/:id', requireAuth, asyncHandler(async (req, res) => {
+    const currentReview = await Review.findByPk(req.params.id)
+
+    if (currentReview) {
+        const { rating, content } = req.body
+        await currentReview.update({
+            rating,
+            content,
+        })
+        return res.json(currentReview)
+    }
+}))
+
+
+router.delete('/:id', requireAuth, asyncHandler(async (req, res) => {
+
+    const removedReview = await Review.findByPk(req.params.id)
+
+    if (removedReview) {
+        await removedReview.destroy()
+        return res.json(removedReview)
+    }
 }))
 
 
