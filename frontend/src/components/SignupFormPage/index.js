@@ -3,6 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 
 function SignupFormPage() {
@@ -47,87 +52,65 @@ function SignupFormPage() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <ul>
-          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-        </ul>
-        <label>
-          Email
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          First Name
-          <input
-            type="text"
-            value={first_name}
-            onChange={(e) => setFirstName(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Last Name
-          <input
-            type="text"
-            value={last_name}
-            onChange={(e) => setLastName(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Tell us about yourself:
-          <input
-            type="textarea"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </label>
-        <label>
-          Password
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Confirm Password
-          <input
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-            <input type="file" onChange={updateFile} />
-          </label>
-          {/* <label>
-              Multiple Upload
-              <input
-                type="file"
-                multiple
-                onChange={updateFiles} />
-            </label> */}
-        <button type="submit">Sign Up</button>
-      </form>
-      <div>
-        {sessionUser?.user && (
-          <div>
-            <h1>{sessionUser?.user.first_name}</h1>
-            <img
-              style={{ width: "150px" }}
-              src={sessionUser?.user.profileImageUrl}
-              alt="profile"
-            />
-          </div>
-        )}
-      </div>
+      <Container>
+        <Row>
+          <Col sm={4}>
+            <Form onSubmit={handleSubmit}>
+              <ul>
+                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+              </ul>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control type="email" placeholder="Enter email" value={email}
+                  onChange={(e) => setEmail(e.target.value)} required/>
+                <Form.Text className="text-muted">
+                  We'll never share your email with anyone else.
+                </Form.Text>
+              </Form.Group>
+
+              <Form.Group controlId="Name">
+                <Form.Label>First Name</Form.Label>
+                <Form.Control type="text" placeholder="Enter First Name" value={first_name}
+                  onChange={(e) => setFirstName(e.target.value)} required/>
+              </Form.Group>
+
+              <Form.Group controlId="Name">
+                <Form.Label>Last Name</Form.Label>
+                <Form.Control type="text" placeholder="Enter Last Name" value={last_name}
+                  onChange={(e) => setLastName(e.target.value)} required/>
+              </Form.Group>
+
+              <Form.Group controlId="formPlaintext">
+                <Form.Label>Tell us about yourself: </Form.Label>
+                <Form.Control type="textarea" placeholder="Bio" value={description}
+                  onChange={(e) => setDescription(e.target.value)}/>
+              </Form.Group>
+
+              <Form.Group controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control type="password" placeholder="Password" value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required/>
+              </Form.Group>
+
+              <Form.Group controlId="formBasicPassword">
+                <Form.Label>Confirm Password</Form.Label>
+                <Form.Control type="password" placeholder="Confirm Password" value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)} required/>
+              </Form.Group>
+
+              <Form.Group controlId="formBasicPassword">
+                <Form.Label></Form.Label>
+                <Form.Control type="file" placeholder="Confirm Password" onChange={updateFile} />
+              </Form.Group>
+
+              <Button variant="primary" type="submit">
+                Sign Up
+              </Button>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
