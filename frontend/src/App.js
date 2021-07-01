@@ -10,7 +10,6 @@ import Splash from "./components/SplashPage";
 import Footer from "./components/Footer";
 
 
-
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
