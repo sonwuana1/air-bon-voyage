@@ -8,7 +8,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Splash from "./components/SplashPage";
 import Footer from "./components/Footer";
-
+import ViewOneSpot from "./components/ViewOneSpot";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +27,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path="/spots/:id">
+            <ViewOneSpot />
           </Route>
           <ProtectedRoute path="/" exact={true}>
             <Splash />
