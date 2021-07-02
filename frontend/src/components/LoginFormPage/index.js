@@ -8,6 +8,7 @@ import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import pic2 from './pic2.jpg'
 
 
 
@@ -41,49 +42,52 @@ function LoginFormPage() {
   }
 
   return (
-    <div
+    <div className="test"
       style={{
-        backgroundImage: "./pic2.jpg",
+        backgroundImage: `url(${pic2})`,
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
         backgroundSize: "cover",
-      }}>
-      <Container>
-        <Row>
-          <Col sm={4}>
-            <Form onSubmit={handleSubmit}>
-              <ul>
-                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-              </ul>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" value={credential}
-                  onChange={(e) => setCredential(e.target.value)}
-                  required/>
-                <Form.Text className="text-muted">
-                  We'll never share your email with anyone else.
-                </Form.Text>
-              </Form.Group>
+      }}
+      >
+      <div>
+        <Container>
+          <Row>
+            <Col sm={4}>
+              <Form onSubmit={handleSubmit}>
+                <ul>
+                  {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                </ul>
+                <Form.Group controlId="formBasicEmail">
+                  <Form.Label>Email address</Form.Label>
+                  <Form.Control type="email" placeholder="Enter email" value={credential}
+                    onChange={(e) => setCredential(e.target.value)}
+                    required/>
+                  <Form.Text className="text-muted">
+                    We'll never share your email with anyone else.
+                  </Form.Text>
+                </Form.Group>
 
-              <Form.Group controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required/>
-              </Form.Group>
-              {/* <Form.Group controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-              </Form.Group> */}
-              <Button variant="primary" type="submit">
-                Login
-              </Button>
-              <Button variant="primary" type="button" onClick={DemoLogin}>
-                Demo User
-              </Button>
-            </Form>
-          </Col>
-        </Row>
-      </Container>
+                <Form.Group controlId="formBasicPassword">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control type="password" placeholder="Password" value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required/>
+                </Form.Group>
+                {/* <Form.Group controlId="formBasicCheckbox">
+                  <Form.Check type="checkbox" label="Check me out" />
+                </Form.Group> */}
+                <Button variant="primary" type="submit">
+                  Login
+                </Button>
+                <Button variant="primary" type="button" onClick={DemoLogin}>
+                  Demo User
+                </Button>
+              </Form>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     </div>
   );
 }
