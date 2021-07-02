@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import { getOneBooking } from '../../store/booking';
 import UpdateBooking from '../UpdateBooking';
+import DeleteBooking from '../DeleteBooking';
+
+
 
 const ViewOneBooking = () => {
     const dispatch = useDispatch()
@@ -28,6 +31,7 @@ const ViewOneBooking = () => {
             <h3>{bookingState.Spot?.name}</h3>
             <h3>{bookingState?.start_date} to {bookingState?.end_date}</h3>
             <UpdateBooking />
+            <DeleteBooking />
         </div>
     )
 }

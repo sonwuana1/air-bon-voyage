@@ -19,7 +19,7 @@ const ViewAllBookings = () => {
             {bookingState?.map(obj => {
                 return(
                     <div>
-                        <Link to={`/bookings/${obj.id}`}>{obj.start_date} to {obj.end_date}</Link>
+                        <Link to={`/bookings/${obj?.id}`}>{obj?.start_date} to {obj?.end_date}</Link>
                     </div>
                 )
             })}
