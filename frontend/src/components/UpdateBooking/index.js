@@ -12,17 +12,16 @@ import Button from 'react-bootstrap/Button';
 const UpdateBooking = () => {
     const dispatch = useDispatch();
     const history = useHistory();
-    // const { id } = useParams();
-    // console.log(id)
+    const { id } = useParams();
     const bookingState = useSelector(state => state.booking);
-    const [start_date, setStartDate] = useState('');
-    const [end_date, setEndDate] = useState('');
+    const [start_date, setStartDate] = useState();
+    const [end_date, setEndDate] = useState();
 
 
     async function handleOnSubmit(e) {
         e.preventDefault()
         const payload = { start_date, end_date }
-        const updatedBooking = await dispatch(updateBooking(payload))
+        const updatedBooking = await dispatch(updateBooking(id, payload))
         if (updatedBooking) {
             history.push(`/`)
         }

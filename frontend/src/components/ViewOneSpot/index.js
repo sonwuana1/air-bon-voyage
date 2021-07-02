@@ -5,7 +5,7 @@ import { getOneSpot } from '../../store/spot';
 import CreateBooking from '../CreateBooking';
 
 
-const ViewAllSpots = () => {
+const ViewOneSpot = () => {
     const dispatch = useDispatch()
     const history = useHistory();
     const { id } = useParams();
@@ -63,4 +63,4 @@ const ViewAllSpots = () => {
 }
 
 
-export default ViewAllSpots;
+export default ViewOneSpot;
