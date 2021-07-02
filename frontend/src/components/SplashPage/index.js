@@ -16,7 +16,11 @@ function Splash() {
     // }, [])
 
     return (
-        <div>
+        <div
+        // style={{
+        //     backgroundColor: "white",
+        //     }}
+        >
             <h1 >Welcome to Air Bon Voyage!</h1>
             <ViewAllSpots />
         </div>
