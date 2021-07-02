@@ -34,7 +34,7 @@ export const getOneSpot = (id) => async dispatch => {
 
   if (response.ok) {
     const data = await response.json();
-    console.log('DATAAAAAAAAA', data)
+    // console.log('DATAAAAAAAAA', data)
     dispatch(addOneSpot(data));
   }
   return response;

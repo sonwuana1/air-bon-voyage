@@ -2,15 +2,16 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import { getOneSpot } from '../../store/spot';
+import CreateBooking from '../CreateBooking';
 
 
 const ViewAllSpots = () => {
     const dispatch = useDispatch()
     const history = useHistory();
     const { id } = useParams();
-    console.log(id)
+    // console.log(id)
     const spotState = useSelector(state => state.spot)
-    console.log('STATEEEEEEE', spotState)
+    // console.log('STATEEEEEEE', spotState)
 
     useEffect(() => {
         if (id) {
@@ -40,6 +41,10 @@ const ViewAllSpots = () => {
             <p>Number of guests: {spotState.num_of_guests}</p>
             <p>Number of beds: {spotState.num_of_beds}</p>
             <p>Number of baths: {spotState.num_of_baths}</p>
+
+            <div>
+                <CreateBooking />
+            </div>
 
             <div>
                 <h3>Reviews</h3>

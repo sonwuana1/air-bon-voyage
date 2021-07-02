@@ -10,6 +10,8 @@ import Splash from "./components/SplashPage";
 import Footer from "./components/Footer";
 import ViewOneSpot from "./components/ViewOneSpot";
 
+
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);

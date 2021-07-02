@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 // import {useDispatch} from 'react-redux';
 import './Splash.css';
 import ViewAllSpots from "../ViewAllSpots";
-
+import ViewAllBookings from "../ViewAllBookings";
 
 
 
@@ -23,6 +23,7 @@ function Splash() {
         >
             <h1 >Welcome to Air Bon Voyage!</h1>
             <ViewAllSpots />
+            <ViewAllBookings />
         </div>
     );
 }
