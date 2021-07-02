@@ -7,7 +7,7 @@ import { getAllBookings } from '../../store/booking';
 const ViewAllBookings = () => {
     const dispatch = useDispatch();
     const bookingState = useSelector(state => Object.values(state.booking))
-    console.log('BOOKING STATE', bookingState)
+    // console.log('BOOKING STATE', bookingState)
 
     useEffect(() => {
         dispatch(getAllBookings())

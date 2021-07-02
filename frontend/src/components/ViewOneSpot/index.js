@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import { getOneSpot } from '../../store/spot';
 import CreateBooking from '../CreateBooking';
+import ViewAllReviews from '../ViewAllReviews';
 
 
 const ViewOneSpot = () => {
@@ -48,14 +49,15 @@ const ViewOneSpot = () => {
 
             <div>
                 <h3>Reviews</h3>
-                {spotState.Reviews?.map(review => {
+                {/* {spotState.Reviews?.map(review => {
                     return(
                         <div>
                             <p>Rating: {review.rating}</p>
                             <p>{review.content}</p>
                         </div>
                     )
-                })}
+                })} */}
+                <ViewAllReviews />
             </div>
 
         </div>
