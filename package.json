@@ -22,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/sonwuana1/air-bon-voyage/issues"
   },
-  "homepage": "https://github.com/sonwuana1/air-bon-voyage#readme"
+  "homepage": "https://github.com/sonwuana1/air-bon-voyage#readme",
+  "dependencies": {}
 }
