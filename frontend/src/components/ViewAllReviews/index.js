@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllReviews } from '../../store/review';
+import EditReview from '../EditReview';
 
 
 const ViewAllReviews = () => {
@@ -23,6 +24,7 @@ const ViewAllReviews = () => {
                             <p>Anonymous</p>
                             <p>Rating: {review?.rating}</p>
                             <p>{review?.content}</p>
+                            <EditReview />
                         </div>
                     )
                 })}

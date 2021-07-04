@@ -40,6 +40,23 @@ export const getOneReview = (id) => async (dispatch) => {
 }
 
 
+export const editReview = (id, data) => async dispatch => {
+    const response = await csrfFetch(`/api/reviews/${id}`, {
+      method: 'put',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      const editedReview = await response.json();
+      dispatch(addOneReview(editedReview));
+      return editedReview;
+    }
+};
+
+
 
 const initialState = {}
 
