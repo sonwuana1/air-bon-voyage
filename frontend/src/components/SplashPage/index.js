@@ -22,7 +22,7 @@ function Splash() {
         //     backgroundColor: "white",
         //     }}
         >
-            <h1 >Welcome to Air Bon Voyage!</h1>
+            <h1 className='titleContainer'>Welcome to Air Bon Voyage!</h1>
             <ViewAllSpots />
             <ViewAllBookings />
         </div>
