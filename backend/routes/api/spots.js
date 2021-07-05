@@ -28,4 +28,17 @@ router.get('/:id', requireAuth, asyncHandler(async (req, res) => {
 }))
 
 
+router.get('/:id/reviews', requireAuth, asyncHandler(async (req, res) => {
+
+    // return res.json(allReviewsByUser)
+    // console.log('REQQQQQQQQ', req.params.id)
+    const allReviewsBySpot = await Review.findAll({
+        where: { spot_id: req.params.id },
+        include: [Spot, Image],
+    })
+
+    return res.json(allReviewsBySpot)
+}))
+
+
 module.exports = router;

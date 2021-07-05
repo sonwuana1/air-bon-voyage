@@ -12,10 +12,10 @@ const EditReview = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const { id } = useParams();
-    console.log(id)
+    // console.log(id)
 
     const reviewState = useSelector(state => state.review)
-    console.log(reviewState)
+    // console.log('REVIEWSTATE', reviewState)
 
     const [rating, setRating] = useState();
     const [content, setContent] = useState('');
