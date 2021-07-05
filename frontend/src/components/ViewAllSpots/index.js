@@ -7,8 +7,13 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+// import { Map, GoogleApiWrapper, MapContainer } from 'google-maps-react';
 
 
+const mapStyles = {
+    width: '100%',
+    height: '100%',
+  };
 
 
 const ViewAllSpots = () => {
@@ -65,3 +70,5 @@ const ViewAllSpots = () => {
 
 
 export default ViewAllSpots;
+// export default (ViewAllSpots, GoogleApiWrapper({
+//     apiKey: 'AIzaSyAUN3kd3mSSvon94EFE-xpunp5dWR20gUM'})(MapContainer));
