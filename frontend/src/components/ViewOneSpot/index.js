@@ -4,6 +4,10 @@ import { Link, useHistory, useParams } from 'react-router-dom';
 import { getOneSpot } from '../../store/spot';
 import CreateBooking from '../CreateBooking';
 import ViewAllReviews from '../ViewAllReviews';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
 
 
 const ViewOneSpot = () => {
@@ -28,13 +32,19 @@ const ViewOneSpot = () => {
         <div>
             <h2>{spotState.name}</h2>
             <div>
-                {spotState.Images?.map(pic => {
-                    return(
-                        <div>
-                            <img src={pic.link} alt=''></img>
-                        </div>
-                    )
-                })}
+                <Container>
+                    <Row>
+                        {spotState.Images?.map(pic => {
+                            return(
+                                <Col>
+                                    <div>
+                                        <img src={pic.link} alt='' width={300}></img>
+                                    </div>
+                                </Col>
+                            )
+                        })}
+                    </Row>
+                </Container>
             </div>
             <h4>{spotState.location}</h4>
             <h4>${spotState.price}</h4>
