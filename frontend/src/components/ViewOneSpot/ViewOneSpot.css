@@ -1,0 +1,11 @@
+
+.titleContainer {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}
+
+.spotPageContainer {
+    display: grid;
+    padding: 25px;
+}

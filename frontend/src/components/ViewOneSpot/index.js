@@ -7,6 +7,7 @@ import ViewAllReviews from '../ViewAllReviews';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import './ViewOneSpot.css';
 
 
 
@@ -30,7 +31,9 @@ const ViewOneSpot = () => {
 
     return (
         <div>
-            <h2>{spotState.name}</h2>
+            <div className='titleContainer'>
+                <h2>{spotState.name}</h2>
+            </div>
             <div>
                 <Container>
                     <Row>
@@ -46,18 +49,21 @@ const ViewOneSpot = () => {
                     </Row>
                 </Container>
             </div>
-            <h4>{spotState.location}</h4>
-            <h4>${spotState.price}</h4>
-            <p>{spotState.description}</p>
-            <p>Number of guests: {spotState.num_of_guests}</p>
-            <p>Number of beds: {spotState.num_of_beds}</p>
-            <p>Number of baths: {spotState.num_of_baths}</p>
+            <div className='spotPageContainer'>
+                <h4>{spotState.location}</h4>
+                <h4>${spotState.price}</h4>
+                <p>{spotState.description}</p>
+                <p>Number of guests: {spotState.num_of_guests}</p>
+                <p>Number of beds: {spotState.num_of_beds}</p>
+                <p>Number of baths: {spotState.num_of_baths}</p>
+            </div>
 
-            <div>
+            <div className='spotPageContainer'>
+                <h2>Book Today!</h2>
                 <CreateBooking />
             </div>
 
-            <div>
+            <div className='spotPageContainer'>
                 <h3>Reviews</h3>
                 {/* {spotState.Reviews?.map(review => {
                     return(
