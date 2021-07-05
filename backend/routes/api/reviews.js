@@ -10,15 +10,22 @@ const { handleValidationErrors } = require('../../utils/validation');
 const router = express.Router();
 
 
-router.get('/', requireAuth, asyncHandler(async (req, res) => {
+// router.get('/spots/:id', requireAuth, asyncHandler(async (req, res) => {
 
-    const allReviewsByUser = await Review.findAll({
-        where: { user_id: req.user.id },
-        include: [Spot, Image]
-    })
+//     // const allReviewsByUser = await Review.findAll({
+//     //     where: { user_id: req.user.id },
+//     //     include: [Spot, Image]
+//     // })
 
-    return res.json(allReviewsByUser)
-}))
+//     // return res.json(allReviewsByUser)
+//     console.log('REQQQQQQQQ', req.params.id)
+//     const allReviewsBySpot = await Review.findAll({
+//         where: { spot_id: req.params.id },
+//         include: [Spot, Image],
+//     })
+
+//     return res.json(allReviewsBySpot)
+// }))
 
 
 router.get('/:id', requireAuth, asyncHandler(async (req, res) => {

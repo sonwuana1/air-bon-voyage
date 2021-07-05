@@ -82,7 +82,7 @@ function SignupFormPage() {
 
               <Form.Group controlId="formPlaintext">
                 <Form.Label>Tell us about yourself: </Form.Label>
-                <Form.Control type="textarea" placeholder="Bio" value={description}
+                <Form.Control as="textarea" rows={3} placeholder="Bio" value={description}
                   onChange={(e) => setDescription(e.target.value)}/>
               </Form.Group>
 
