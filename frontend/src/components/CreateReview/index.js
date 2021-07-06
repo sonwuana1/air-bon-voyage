@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory, useParams } from 'react-router-dom';
-import { editReview } from '../../store/review';
+import { createReview } from '../../store/review';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 
 
 
-const EditReview = () => {
+const CreateReview = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const { id } = useParams();
@@ -26,8 +26,8 @@ const EditReview = () => {
 
     async function handleOnSubmit(e) {
         e.preventDefault()
-        const payload = { rating, content }
-        const newReview = await dispatch(editReview(id, payload))
+        const payload = { rating, content, spot_id: id }
+        const newReview = await dispatch(createReview(payload))
         if (newReview) {
             history.push(`/spots/${id}`)
         }
@@ -37,7 +37,7 @@ const EditReview = () => {
     return(
         <div>
             <Button variant="primary" onClick={handleShow}>
-                Edit Review
+                Add Review
             </Button>
 
             <Modal
@@ -64,7 +64,7 @@ const EditReview = () => {
                                 <Form.Label>Review</Form.Label>
                                 <Form.Control as="textarea" rows={3} value={content} onChange={(e) => setContent(e.target.value)} />
                             </Form.Group>
-                            <Button variant="primary" type="submit" onClick={handleClose}>Update</Button>
+                            <Button variant="primary" type="submit" onClick={handleClose}>Submit</Button>
                         </Form>
                     </Modal.Body>
                 <Modal.Footer>
@@ -80,4 +80,4 @@ const EditReview = () => {
 };
 
 
-export default EditReview;
+export default CreateReview;
