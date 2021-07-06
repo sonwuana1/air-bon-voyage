@@ -49,9 +49,6 @@ function LoginFormPage() {
       //   backgroundAttachment: "fixed",
       //   backgroundSize: "cover",
       // }}
-      style={{
-        backgroundColor: "pink"
-      }}
       >
       <Container>
         <Row>
