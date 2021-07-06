@@ -1,7 +1,19 @@
 
-/* .test {
+/* body {
     background-image: url("./pic2.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 } */
+
+
+.test {
+    background: url("./pic2.jpg") no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: 100%;
+    /* min-height: 100%; */
+}
