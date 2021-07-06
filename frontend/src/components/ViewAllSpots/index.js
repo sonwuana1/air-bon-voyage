@@ -19,7 +19,7 @@ const mapStyles = {
 const ViewAllSpots = () => {
     const dispatch = useDispatch()
     const spotState = useSelector(state => Object.values(state.spot))
-    console.log('STATEEEEEEE', spotState)
+    // console.log('STATEEEEEEE', spotState)
     const history = useDispatch()
 
 

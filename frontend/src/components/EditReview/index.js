@@ -14,8 +14,14 @@ const EditReview = () => {
     const { id } = useParams();
     // console.log(id)
 
-    const reviewState = useSelector(state => state.review)
-    // console.log('REVIEWSTATE', reviewState)
+    const userState = useSelector(state => state.session.user)
+    // console.log('session', userState)
+
+    const reviewState = useSelector(state => state.spot.Reviews)
+    // console.log('spot', reviewState)
+
+    const userReviewIds = reviewState.map(obj => obj.user_id)
+    // console.log('USERIDS', userReviewIds)
 
     const [rating, setRating] = useState();
     const [content, setContent] = useState('');
@@ -36,7 +42,7 @@ const EditReview = () => {
 
     return(
         <div>
-            <Button variant="primary" onClick={handleShow}>
+            <Button variant="primary" onClick={handleShow} disabled={''}>
                 Edit Review
             </Button>
 
@@ -71,7 +77,6 @@ const EditReview = () => {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    {/* <Button variant="primary" type="submit" onClick={handleClose}>Update</Button> */}
                 </Modal.Footer>
             </Modal>
         </div>

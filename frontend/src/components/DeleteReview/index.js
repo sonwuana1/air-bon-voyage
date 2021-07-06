@@ -10,7 +10,7 @@ function DeleteReview() {
     console.log(id)
 
     const reviewState = useSelector(state => state.review)
-    console.log('REVIEWSTATE', reviewState)
+    // console.log('REVIEWSTATE', reviewState)
 
     const history = useHistory();
 
