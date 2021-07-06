@@ -1,26 +1,29 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import { deleteBooking } from '../../store/booking';
+import { deleteReview } from '../../store/review';
 import Button from 'react-bootstrap/Button'
 
 
-function DeleteBooking() {
+function DeleteReview() {
     const dispatch = useDispatch();
     const { id } = useParams();
-    // console.log(id)
+    console.log(id)
+
+    const reviewState = useSelector(state => state.review)
+    // console.log('REVIEWSTATE', reviewState)
+
     const history = useHistory();
 
     async function handleOnSubmit() {
-        await dispatch(deleteBooking(id));
+        await dispatch(deleteReview(id));
         history.push(`/`);
     }
 
     return (
         <div>
-            {/* <button type="submit" onClick={handleOnSubmit}>Delete</button> */}
             <Button variant="secondary" onClick={handleOnSubmit}>Delete</Button>{' '}
         </div>
     )
 }
 
-export default DeleteBooking;
+export default DeleteReview;

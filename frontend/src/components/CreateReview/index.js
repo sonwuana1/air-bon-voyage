@@ -1,27 +1,21 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory, useParams } from 'react-router-dom';
-import { editReview } from '../../store/review';
+import { createReview } from '../../store/review';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 
 
 
-const EditReview = () => {
+const CreateReview = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const { id } = useParams();
     // console.log(id)
 
-    const userState = useSelector(state => state.session.user)
-    // console.log('session', userState)
-
-    const reviewState = useSelector(state => state.spot.Reviews)
-    // console.log('spot', reviewState)
-
-    const userReviewIds = reviewState.map(obj => obj.user_id)
-    // console.log('USERIDS', userReviewIds)
+    const reviewState = useSelector(state => state.review)
+    // console.log('REVIEWSTATE', reviewState)
 
     const [rating, setRating] = useState();
     const [content, setContent] = useState('');
@@ -32,8 +26,8 @@ const EditReview = () => {
 
     async function handleOnSubmit(e) {
         e.preventDefault()
-        const payload = { rating, content }
-        const newReview = await dispatch(editReview(id, payload))
+        const payload = { rating, content, spot_id: id }
+        const newReview = await dispatch(createReview(payload))
         if (newReview) {
             history.push(`/spots/${id}`)
         }
@@ -42,8 +36,8 @@ const EditReview = () => {
 
     return(
         <div>
-            <Button variant="primary" onClick={handleShow} disabled={''}>
-                Edit Review
+            <Button variant="primary" onClick={handleShow}>
+                Add Review
             </Button>
 
             <Modal
@@ -70,13 +64,14 @@ const EditReview = () => {
                                 <Form.Label>Review</Form.Label>
                                 <Form.Control as="textarea" rows={3} value={content} onChange={(e) => setContent(e.target.value)} />
                             </Form.Group>
-                            <Button variant="primary" type="submit" onClick={handleClose}>Update</Button>
+                            <Button variant="primary" type="submit" onClick={handleClose}>Submit</Button>
                         </Form>
                     </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
+                    {/* <Button variant="primary" type="submit" onClick={handleClose}>Update</Button> */}
                 </Modal.Footer>
             </Modal>
         </div>
@@ -85,4 +80,4 @@ const EditReview = () => {
 };
 
 
-export default EditReview;
+export default CreateReview;

@@ -4,6 +4,9 @@ import { Link, useHistory, useParams } from 'react-router-dom';
 import { getOneSpot } from '../../store/spot';
 import CreateBooking from '../CreateBooking';
 import ViewAllReviews from '../ViewAllReviews';
+import CreateReview from '../CreateReview';
+import EditReview from '../EditReview';
+import DeleteReview from '../DeleteReview';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -65,15 +68,18 @@ const ViewOneSpot = () => {
 
             <div className='spotPageContainer'>
                 <h3>Reviews</h3>
-                {/* {spotState.Reviews?.map(review => {
+                <CreateReview />
+                {spotState.Reviews?.map(review => {
                     return(
                         <div>
                             <p>Rating: {review.rating}</p>
                             <p>{review.content}</p>
+                            <EditReview />
+                            {/* <DeleteReview /> */}
                         </div>
                     )
-                })} */}
-                <ViewAllReviews />
+                })}
+                {/* <ViewAllReviews /> */}
             </div>
 
         </div>
