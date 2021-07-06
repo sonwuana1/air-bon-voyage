@@ -1,7 +1,17 @@
 
-/* .test {
+/* body {
     background-image: url("./pic2.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 } */
+
+
+.test {
+    background: url("./pic3.jpg") no-repeat;
+    width: 100vw;
+    height: 100vh;
+    background-size: 100% 100%;
+    position: fixed;
+    padding-top: 50px;
+}

@@ -51,7 +51,7 @@ function SignupFormPage() {
   //   };
 
   return (
-    <div>
+    <div className="signUpContainer">
       <Container>
         <Row>
           <Col sm={4}>
@@ -60,41 +60,41 @@ function SignupFormPage() {
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
               </ul>
               <Form.Group controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
+                <Form.Label className="text-white">Email address</Form.Label>
                 <Form.Control type="email" placeholder="Enter email" value={email}
                   onChange={(e) => setEmail(e.target.value)} required/>
-                <Form.Text className="text-muted">
+                <Form.Text className="text-white">
                   We'll never share your email with anyone else.
                 </Form.Text>
               </Form.Group>
 
               <Form.Group controlId="Name">
-                <Form.Label>First Name</Form.Label>
+                <Form.Label className="text-white">First Name</Form.Label>
                 <Form.Control type="text" placeholder="Enter First Name" value={first_name}
                   onChange={(e) => setFirstName(e.target.value)} required/>
               </Form.Group>
 
               <Form.Group controlId="Name">
-                <Form.Label>Last Name</Form.Label>
+                <Form.Label className="text-white">Last Name</Form.Label>
                 <Form.Control type="text" placeholder="Enter Last Name" value={last_name}
                   onChange={(e) => setLastName(e.target.value)} required/>
               </Form.Group>
 
               <Form.Group controlId="formPlaintext">
-                <Form.Label>Tell us about yourself: </Form.Label>
+                <Form.Label className="text-white">Tell us about yourself: </Form.Label>
                 <Form.Control as="textarea" rows={3} placeholder="Bio" value={description}
                   onChange={(e) => setDescription(e.target.value)}/>
               </Form.Group>
 
               <Form.Group controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
+                <Form.Label className="text-white">Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required/>
               </Form.Group>
 
               <Form.Group controlId="formBasicPassword">
-                <Form.Label>Confirm Password</Form.Label>
+                <Form.Label className="text-white">Confirm Password</Form.Label>
                 <Form.Control type="password" placeholder="Confirm Password" value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)} required/>
               </Form.Group>
