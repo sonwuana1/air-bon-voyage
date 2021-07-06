@@ -42,14 +42,7 @@ function LoginFormPage() {
   }
 
   return (
-    <div className="test"
-      // style={{
-      //   backgroundImage: `url(${pic2})`,
-      //   backgroundRepeat: "no-repeat",
-      //   backgroundAttachment: "fixed",
-      //   backgroundSize: "cover",
-      // }}
-      >
+    <div className="test">
       <Container>
         <Row>
           <Col sm={4}>
@@ -58,17 +51,17 @@ function LoginFormPage() {
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
               </ul>
               <Form.Group controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
+                <Form.Label className="text-white">Email address</Form.Label>
                 <Form.Control type="email" placeholder="Enter email" value={credential}
                   onChange={(e) => setCredential(e.target.value)}
                   required/>
-                <Form.Text className="text-muted">
+                <Form.Text className="text-white">
                   We'll never share your email with anyone else.
                 </Form.Text>
               </Form.Group>
 
               <Form.Group controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
+                <Form.Label className="text-white">Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required/>
