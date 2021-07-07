@@ -2,6 +2,7 @@ import { csrfFetch } from './csrf';
 
 
 const LOAD_REVIEW = 'review/LOAD_REVIEW';
+const LOAD_REVIEWS_BY_SPOTID ="reviews/LOAD_REVIEWS_BY_SPOTID";
 const ADD_ONE_REVIEW = 'review/ADD_ONE_REVIEW';
 const REMOVE_ONE_REVIEW = 'review/REMOVE_ONE_REVIEW';
 
@@ -11,6 +12,11 @@ const load = (reviews, spot_id) => ({
     type: LOAD_REVIEW,
     reviews,
     spot_id,
+});
+
+const loadReviewsBySpotIdActionCreator = (reviews) => ({
+  type:LOAD_REVIEWS_BY_SPOTID,
+  payload:reviews,
 });
 
 const addOneReview = review => ({
@@ -36,6 +42,21 @@ export const getAllReviews = (id) => async (dispatch) => {
     }
     return response;
 };
+
+
+export const fetchReviewsBySpotId = (spot_id) => async (dispatch) => {
+  console.log('SPOTIDDDDD', spot_id)
+  const response = await fetch(`/api/reviews/spots/${spot_id}`)
+
+  const responseObject = await response.json();
+
+  if (responseObject.errors) {
+    return responseObject;
+  }
+
+  dispatch(loadReviewsBySpotIdActionCreator(responseObject));
+
+}
 
 
 export const getOneReview = (id) => async (dispatch) => {
@@ -103,12 +124,6 @@ const initialState = {}
 const reviewReducer = (state=initialState, action) => {
     let newState;
     switch (action.type) {
-        // case LOAD_REVIEW:
-        //     newState = { ...state };
-        //     action.reviews.forEach(review => {
-        //         newState[review.id] = review;
-        //     })
-        //     return newState;
         case LOAD_REVIEW:
             newState = { ...state };
             // console.log('ACTION', action)
@@ -116,6 +131,14 @@ const reviewReducer = (state=initialState, action) => {
                 newState[review.id] = review;
             })
             return newState;
+        case LOAD_REVIEWS_BY_SPOTID:
+          newState = {...state};
+          console.log(action.payload)
+          // newState.review = action.payload;
+          action.payload.forEach(review => {
+            newState[review.id] = review;
+        })
+          return newState;
         case ADD_ONE_REVIEW:
             if (!state[action.review.id]) {
                 const newState = { ...state, ...action.review }
@@ -124,7 +147,7 @@ const reviewReducer = (state=initialState, action) => {
             return {
                 ...state, ...state[action.review.id], ...action.review
             }
-          case REMOVE_ONE_REVIEW:
+        case REMOVE_ONE_REVIEW:
             newState = { ...state }
             delete newState[action.id]
             return newState;

@@ -20,7 +20,7 @@ const EditReview = () => {
     const reviewState = useSelector(state => state.spot.Reviews)
     // console.log('spot', reviewState)
 
-    const userReviewIds = reviewState.map(obj => obj.user_id)
+    // const userReviewIds = reviewState.map(obj => obj.user_id)
     // console.log('USERIDS', userReviewIds)
 
     const [rating, setRating] = useState();

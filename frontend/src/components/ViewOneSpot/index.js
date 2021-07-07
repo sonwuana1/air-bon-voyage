@@ -22,7 +22,7 @@ const ViewOneSpot = () => {
     const { id } = useParams();
     // console.log(id)
     const spotState = useSelector(state => state.spot)
-    // console.log('STATEEEEEEE', spotState)
+    console.log('STATEEEEEEE', spotState)
 
     useEffect(() => {
         if (id) {
@@ -144,17 +144,17 @@ const ViewOneSpot = () => {
             <div className='spotPageContainer'>
                 <h3>Reviews</h3>
                 <CreateReview />
-                {spotState.Reviews?.map(review => {
-                    return(
-                        <div>
-                            <p>Rating: {review.rating}</p>
-                            <p>{review.content}</p>
-                            <EditReview />
+                {/* {spotState.Reviews?.map(review => { */}
+                    {/* return( */}
+                        {/* <div> */}
+                            {/* <p>Rating: {review.rating}</p> */}
+                            {/* <p>{review.content}</p> */}
+                            {/* <EditReview /> */}
                             {/* <DeleteReview /> */}
-                        </div>
-                    )
-                })}
-                {/* <ViewAllReviews /> */}
+                        {/* </div> */}
+                    {/* ) */}
+                {/* })} */}
+                <ViewAllReviews />
             </div>
 
         </div>
