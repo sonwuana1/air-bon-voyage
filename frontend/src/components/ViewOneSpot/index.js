@@ -11,9 +11,7 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import './ViewOneSpot.css';
-// import { Map, GoogleApiWrapper, MapContainer } from 'google-maps-react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import MapContainer from '../MapContainer';
 
 
 
@@ -37,13 +35,10 @@ const ViewOneSpot = () => {
     }
 
     const mapStyles = {
-        height: "50vh",
+        height: "40vh",
         width: "50%"
     };
 
-    const defaultCenter = {
-        lat: 59.3409, lng: 18.0754
-    }
 
     const locations = [
         {
@@ -90,20 +85,9 @@ const ViewOneSpot = () => {
         }
     ];
 
-    const newCenter = locations.forEach(item => {
-        if (item.id === id) return item.location
-    })
-    console.log(newCenter)
-    console.log(newCenter[0])
+    const newCenter = locations.find(item => item.id == id).location
+    // console.log(newCenter)
 
-    // let newCenter:
-    // locations.forEach(item => {
-    //     if (item.id === id) newCenter = item.location
-    // })
-
-    // for (let i = 0; i < locations.length; i++) {
-    //     if (item.id == id) return item.location
-    // }
 
     return (
         <div>
@@ -123,19 +107,26 @@ const ViewOneSpot = () => {
                                 </Col>
                             )
                         })}
+                        <GoogleMap googleMapsApiKey='AIzaSyAUN3kd3mSSvon94EFE-xpunp5dWR20gUM'
+                            mapContainerStyle={mapStyles}
+                            zoom={16}
+                            center={newCenter}
+
+                            >
+                            <Marker position={newCenter}/>
+                        </GoogleMap>
                     </Row>
+
                 </Container>
-                {/* <MapContainer /> */}
             </div>
-            <GoogleMap googleMapsApiKey='AIzaSyAUN3kd3mSSvon94EFE-xpunp5dWR20gUM'
+            {/* <GoogleMap googleMapsApiKey='AIzaSyAUN3kd3mSSvon94EFE-xpunp5dWR20gUM'
                 mapContainerStyle={mapStyles}
                 zoom={15}
-                center={newCenter[0]}
-                // center={locations.map(item => {if (item.id == id) return item.location})}
+                center={newCenter}
 
             >
-                <Marker position={newCenter[0]}/>
-            </GoogleMap>
+                <Marker position={newCenter}/>
+            </GoogleMap> */}
             <div className='spotPageContainer'>
                 <h4>{spotState.location}</h4>
                 <h4>${spotState.price}</h4>
@@ -172,5 +163,5 @@ const ViewOneSpot = () => {
 
 
 export default ViewOneSpot;
-// export default (ViewAllSpots, GoogleApiWrapper({
-//     apiKey: 'AIzaSyAUN3kd3mSSvon94EFE-xpunp5dWR20gUM'})(MapContainer));
+
+// Google Maps apiKey: 'AIzaSyAUN3kd3mSSvon94EFE-xpunp5dWR20gUM'
