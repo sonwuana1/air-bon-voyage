@@ -58,8 +58,8 @@ const ViewOneSpot = () => {
         {
           id: 3,
           location: {
-            lat: 19.7343,
-            lng: 155.0408
+            lat: 19.734005,
+            lng: -155.040745
           },
         },
         {
