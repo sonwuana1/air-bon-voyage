@@ -11,6 +11,10 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import './ViewOneSpot.css';
+// import { Map, GoogleApiWrapper, MapContainer } from 'google-maps-react';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import MapContainer from '../MapContainer';
+
 
 
 
@@ -32,6 +36,75 @@ const ViewOneSpot = () => {
         history.push('/')
     }
 
+    const mapStyles = {
+        height: "50vh",
+        width: "50%"
+    };
+
+    const defaultCenter = {
+        lat: 59.3409, lng: 18.0754
+    }
+
+    const locations = [
+        {
+          id: 1,
+          location: {
+            lat: 59.3409,
+            lng: 18.0754
+          },
+        },
+        {
+          id: 2,
+          location: {
+            lat: 59.3313,
+            lng: 18.0311
+          },
+        },
+        {
+          id: 3,
+          location: {
+            lat: 19.7343,
+            lng: 155.0408
+          },
+        },
+        {
+          id: 4,
+          location: {
+            lat: 35.90016,
+            lng: 14.51000
+          },
+        },
+        {
+          id: 5,
+          location: {
+            lat: 36.0312,
+            lng: 14.2180
+          },
+        },
+        {
+            id: 6,
+            location: {
+              lat: 41.4055,
+              lng: 2.1915
+            },
+        }
+    ];
+
+    const newCenter = locations.forEach(item => {
+        if (item.id === id) return item.location
+    })
+    console.log(newCenter)
+    console.log(newCenter[0])
+
+    // let newCenter:
+    // locations.forEach(item => {
+    //     if (item.id === id) newCenter = item.location
+    // })
+
+    // for (let i = 0; i < locations.length; i++) {
+    //     if (item.id == id) return item.location
+    // }
+
     return (
         <div>
             <div className='titleContainer'>
@@ -45,13 +118,24 @@ const ViewOneSpot = () => {
                                 <Col>
                                     <div>
                                         <img src={pic.link} alt='' width={300}></img>
+
                                     </div>
                                 </Col>
                             )
                         })}
                     </Row>
                 </Container>
+                {/* <MapContainer /> */}
             </div>
+            <GoogleMap googleMapsApiKey='AIzaSyAUN3kd3mSSvon94EFE-xpunp5dWR20gUM'
+                mapContainerStyle={mapStyles}
+                zoom={15}
+                center={newCenter[0]}
+                // center={locations.map(item => {if (item.id == id) return item.location})}
+
+            >
+                <Marker position={newCenter[0]}/>
+            </GoogleMap>
             <div className='spotPageContainer'>
                 <h4>{spotState.location}</h4>
                 <h4>${spotState.price}</h4>
@@ -88,3 +172,5 @@ const ViewOneSpot = () => {
 
 
 export default ViewOneSpot;
+// export default (ViewAllSpots, GoogleApiWrapper({
+//     apiKey: 'AIzaSyAUN3kd3mSSvon94EFE-xpunp5dWR20gUM'})(MapContainer));
