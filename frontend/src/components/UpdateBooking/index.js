@@ -14,8 +14,8 @@ const UpdateBooking = () => {
     const history = useHistory();
     const { id } = useParams();
     const bookingState = useSelector(state => state.booking);
-    const [start_date, setStartDate] = useState();
-    const [end_date, setEndDate] = useState();
+    const [start_date, setStartDate] = useState('');
+    const [end_date, setEndDate] = useState('');
 
 
     async function handleOnSubmit(e) {

@@ -24,6 +24,12 @@ const ViewOneSpot = () => {
     const spotState = useSelector(state => state.spot)
     // console.log('STATEEEEEEE', spotState)
 
+    const sessionUser = useSelector(state => state.session.user);
+    // console.log(sessionUser)
+    if (!sessionUser) {
+        history.push('/login')
+    }
+
     useEffect(() => {
         if (id) {
             dispatch(getOneSpot(id))
