@@ -2,6 +2,7 @@ import { csrfFetch } from './csrf';
 
 
 const LOAD_REVIEW = 'review/LOAD_REVIEW';
+const LOAD_REVIEWS_BY_SPOTID ="reviews/LOAD_REVIEWS_BY_SPOTID";
 const ADD_ONE_REVIEW = 'review/ADD_ONE_REVIEW';
 const REMOVE_ONE_REVIEW = 'review/REMOVE_ONE_REVIEW';
 
@@ -11,6 +12,11 @@ const load = (reviews, spot_id) => ({
     type: LOAD_REVIEW,
     reviews,
     spot_id,
+});
+
+const loadReviewsBySpotId = (reviews) => ({
+  type:LOAD_REVIEWS_BY_SPOTID,
+  payload:reviews,
 });
 
 const addOneReview = review => ({
@@ -25,17 +31,32 @@ const removeReview = (id) => ({
 
 
 export const getAllReviews = (id) => async (dispatch) => {
-    console.log('IDDDDDDDD', id)
+    // console.log('IDDDDDDDD', id)
     const response = await csrfFetch(`/api/reviews/spots/${id}`);
-    console.log('RESPONSEEEEEE', response)
+    // console.log('RESPONSEEEEEE', response)
 
     if (response.ok) {
       const data = await response.json();
-      console.log('DATAAAAAAAAA', data)
+      // console.log('DATAAAAAAAAA', data)
       dispatch(load(data, id));
     }
     return response;
 };
+
+
+export const ReviewsBySpotId = (spot_id) => async (dispatch) => {
+  // console.log('SPOTIDDDDD', spot_id)
+  const response = await fetch(`/api/reviews/spots/${spot_id}`)
+
+  const responseObject = await response.json();
+
+  if (responseObject.errors) {
+    return responseObject;
+  }
+
+  dispatch(loadReviewsBySpotId(responseObject));
+
+}
 
 
 export const getOneReview = (id) => async (dispatch) => {
@@ -84,7 +105,7 @@ export const createReview = (data) => async (dispatch) => {
 
 
 export const deleteReview = (id) => async (dispatch) => {
-  console.log('IDDDDDDD', id)
+  // console.log('IDDDDDDD', id)
   const response = await csrfFetch(`/api/reviews/${id}`, {
       method: 'delete',
     })
@@ -103,12 +124,6 @@ const initialState = {}
 const reviewReducer = (state=initialState, action) => {
     let newState;
     switch (action.type) {
-        // case LOAD_REVIEW:
-        //     newState = { ...state };
-        //     action.reviews.forEach(review => {
-        //         newState[review.id] = review;
-        //     })
-        //     return newState;
         case LOAD_REVIEW:
             newState = { ...state };
             // console.log('ACTION', action)
@@ -116,6 +131,13 @@ const reviewReducer = (state=initialState, action) => {
                 newState[review.id] = review;
             })
             return newState;
+        case LOAD_REVIEWS_BY_SPOTID:
+          newState = {...state};
+          // console.log(action.payload)
+          action.payload.forEach(review => {
+            newState[review.id] = review;
+        })
+          return newState;
         case ADD_ONE_REVIEW:
             if (!state[action.review.id]) {
                 const newState = { ...state, ...action.review }
@@ -124,7 +146,7 @@ const reviewReducer = (state=initialState, action) => {
             return {
                 ...state, ...state[action.review.id], ...action.review
             }
-          case REMOVE_ONE_REVIEW:
+        case REMOVE_ONE_REVIEW:
             newState = { ...state }
             delete newState[action.id]
             return newState;

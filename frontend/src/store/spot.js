@@ -3,18 +3,25 @@ import { csrfFetch } from './csrf';
 
 const LOAD_SPOT = 'spot/LOAD';
 const ADD_ONE_SPOT = 'spot/ADD_ONE_SPOT';
+const LOAD_REVIEWS_BY_SPOTID ="reviews/LOAD_REVIEWS_BY_SPOTID";
 
 
 
-const load = spots => ({
+const load = (spots) => ({
     type: LOAD_SPOT,
     spots,
 });
 
-const addOneSpot = spot => ({
+const addOneSpot = (spot, reviews) => ({
     type: ADD_ONE_SPOT,
     spot,
-  });
+    reviews
+});
+
+const loadReviewsBySpotIdActionCreator = (reviews) => ({
+  type:LOAD_REVIEWS_BY_SPOTID,
+  payload:reviews,
+});
 
 
 
@@ -23,7 +30,7 @@ export const getAllSpots = () => async dispatch => {
 
     if (response.ok) {
       const data = await response.json();
-    //   console.log('DATAAAAAAAAA', data)
+      // console.log('DATAAAAAAAAA', data)
       dispatch(load(data));
     }
     return response;
@@ -36,7 +43,7 @@ export const getOneSpot = (id) => async dispatch => {
   if (response.ok) {
     const data = await response.json();
     // console.log('DATAAAAAAAAA', data)
-    dispatch(addOneSpot(data));
+    dispatch(addOneSpot(data, data?.Reviews));
   }
   return response;
 }
@@ -61,7 +68,7 @@ const spotReducer = (state = initialState, action) => {
         //     return newState;
         // }
         return {
-            ...state, ...state[action.spot.id], ...action.spot
+            ...state, ...state[action.spot?.id], ...action.spot
         }
         // newState = { ...state };
         // newState.spot = action.payload;
