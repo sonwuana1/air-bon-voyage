@@ -4,6 +4,7 @@ import { Link, useHistory, useParams } from 'react-router-dom';
 import { getOneBooking } from '../../store/booking';
 import UpdateBooking from '../UpdateBooking';
 import DeleteBooking from '../DeleteBooking';
+import Container from 'react-bootstrap/Container'
 
 
 
@@ -26,13 +27,15 @@ const ViewOneBooking = () => {
     }
 
     return (
-        <div>
-            <h2>Current Booking: </h2>
-            <h3>{bookingState.Spot?.name}</h3>
-            <h3>{bookingState?.start_date} to {bookingState?.end_date}</h3>
-            <UpdateBooking />
-            <DeleteBooking />
-        </div>
+        <Container>
+            <div>
+                <h2>Current Booking: </h2>
+                <h3>{bookingState.Spot?.name}</h3>
+                <h3>{bookingState?.start_date} to {bookingState?.end_date}</h3>
+                <UpdateBooking />
+                <DeleteBooking />
+            </div>
+        </Container>
     )
 }
 

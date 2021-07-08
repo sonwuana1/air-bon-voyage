@@ -34,19 +34,22 @@ function App() {
           </Route>
           <Route path="/spots/:id">
             <ViewOneSpot />
+            <Footer />
           </Route>
           {/* <Route path="/bookings">
             <ViewAllBookings />
           </Route> */}
           <Route path="/bookings/:id">
             <ViewOneBooking />
+            <Footer />
           </Route>
           <ProtectedRoute path="/" exact={true}>
             <Splash />
+            <Footer />
           </ProtectedRoute>
         </Switch>
       )}
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
