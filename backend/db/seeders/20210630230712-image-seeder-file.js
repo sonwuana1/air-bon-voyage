@@ -93,19 +93,19 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      link: 'http://www.tekapotourism.co.nz/accomm/images/lakefront_lodge_1.jpg',
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/34882118.jpg?k=80bd44e683b0431e64254c8eab7fd2371bccab32421df5742d71d701b094b14c&o=&hp=1',
       spot_id: 6,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      link: 'http://www.tekapotourism.co.nz/accomm/images/holiday_park_2.jpg',
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/177352911.jpg?k=d817a5034a7044bf28e177492796bbd90fa91f4fefbc605bf82b1c4621c83eb5&o=&hp=1',
       spot_id: 6,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      link: 'http://www.tekapotourism.co.nz/accomm/images/holiday_park_4.jpg',
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/177354161.jpg?k=7c58991bead7941ffaae1ba984997c738e90a352a31aa579996aeb6902c1584b&o=&hp=1',
       spot_id: 6,
       createdAt: new Date(),
       updatedAt: new Date()
