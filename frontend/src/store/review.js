@@ -14,7 +14,7 @@ const load = (reviews, spot_id) => ({
     spot_id,
 });
 
-const loadReviewsBySpotIdActionCreator = (reviews) => ({
+const loadReviewsBySpotId = (reviews) => ({
   type:LOAD_REVIEWS_BY_SPOTID,
   payload:reviews,
 });
@@ -31,21 +31,21 @@ const removeReview = (id) => ({
 
 
 export const getAllReviews = (id) => async (dispatch) => {
-    console.log('IDDDDDDDD', id)
+    // console.log('IDDDDDDDD', id)
     const response = await csrfFetch(`/api/reviews/spots/${id}`);
-    console.log('RESPONSEEEEEE', response)
+    // console.log('RESPONSEEEEEE', response)
 
     if (response.ok) {
       const data = await response.json();
-      console.log('DATAAAAAAAAA', data)
+      // console.log('DATAAAAAAAAA', data)
       dispatch(load(data, id));
     }
     return response;
 };
 
 
-export const fetchReviewsBySpotId = (spot_id) => async (dispatch) => {
-  console.log('SPOTIDDDDD', spot_id)
+export const ReviewsBySpotId = (spot_id) => async (dispatch) => {
+  // console.log('SPOTIDDDDD', spot_id)
   const response = await fetch(`/api/reviews/spots/${spot_id}`)
 
   const responseObject = await response.json();
@@ -54,7 +54,7 @@ export const fetchReviewsBySpotId = (spot_id) => async (dispatch) => {
     return responseObject;
   }
 
-  dispatch(loadReviewsBySpotIdActionCreator(responseObject));
+  dispatch(loadReviewsBySpotId(responseObject));
 
 }
 
@@ -105,7 +105,7 @@ export const createReview = (data) => async (dispatch) => {
 
 
 export const deleteReview = (id) => async (dispatch) => {
-  console.log('IDDDDDDD', id)
+  // console.log('IDDDDDDD', id)
   const response = await csrfFetch(`/api/reviews/${id}`, {
       method: 'delete',
     })
@@ -133,8 +133,7 @@ const reviewReducer = (state=initialState, action) => {
             return newState;
         case LOAD_REVIEWS_BY_SPOTID:
           newState = {...state};
-          console.log(action.payload)
-          // newState.review = action.payload;
+          // console.log(action.payload)
           action.payload.forEach(review => {
             newState[review.id] = review;
         })

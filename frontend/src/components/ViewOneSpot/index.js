@@ -22,7 +22,7 @@ const ViewOneSpot = () => {
     const { id } = useParams();
     // console.log(id)
     const spotState = useSelector(state => state.spot)
-    console.log('STATEEEEEEE', spotState)
+    // console.log('STATEEEEEEE', spotState)
 
     useEffect(() => {
         if (id) {

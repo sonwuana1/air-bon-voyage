@@ -49,21 +49,6 @@ export const getOneSpot = (id) => async dispatch => {
 }
 
 
-// export const fetchReviewsBySpotId = (spot_id) => async (dispatch) => {
-//   console.log('SPOTIDDDDD', spot_id)
-//   const response = await fetch(`/api/reviews/spots/${spot_id}`)
-
-//   const responseObject = await response.json();
-
-//   if (responseObject.errors) {
-//     return responseObject;
-//   }
-
-//   dispatch(loadReviewsBySpotIdActionCreator(responseObject));
-
-// }
-
-
 
 
 const initialState = { };
@@ -82,36 +67,12 @@ const spotReducer = (state = initialState, action) => {
         //     const newState = { ...state, [action.spot.id]: action.spot }
         //     return newState;
         // }
-        newState = {}
-        action?.reviews?.forEach(review => {
-          //  console.log(review)
-            newState[review?.id] = review;
-        })
-        console.log('NEWSTATE', newState)
-      //  return newState;
-        // console.log({...state})
         return {
-            ...state, ...state[action.spot?.id], ...action.spot, review: {
-              newState
-            }
+            ...state, ...state[action.spot?.id], ...action.spot
         }
         // newState = { ...state };
         // newState.spot = action.payload;
         // return newState;
-      // case LOAD_REVIEWS_BY_SPOTID:
-      //     // newState = { ...state };
-      //     // // console.log('ACTION', action)
-      //     // action?.reviews?.forEach(review => {
-      //     //     console.log(review)
-      //     //     newState[review.id] = review;
-      //     // })
-      //     // return newState;
-
-      //     newState = {...state};
-      //     console.log(newState)
-      //     newState.review = action.payload;
-      //     return newState;
-
 
     default:
       return state;
