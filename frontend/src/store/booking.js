@@ -104,13 +104,16 @@ const bookingReducer = (state=initialState, action) => {
             })
             return newState;
         case ADD_ONE_BOOKING:
-            if (!state[action.booking.id]) {
-                const newState = { ...state, ...action.booking }
-                return newState;
-            }
-            return {
-                ...state, ...state[action.booking.id], ...action.booking
-            }
+            // if (!state[action.booking.id]) {
+            //     const newState = { ...state, ...action.booking }
+            //     return newState;
+            // }
+            // return {
+            //     ...state, ...state[action.booking.id], ...action.booking
+            // }
+            newState = { ...state, ...state[action.booking.id] };
+            console.log(action)
+            return newState;
         case REMOVE_ONE_BOOKING:
             newState = { ...state }
             delete newState[action.id]

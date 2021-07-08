@@ -20,12 +20,12 @@ const CreateBooking = () => {
 
 
     async function handleOnSubmit(e) {
-        e.preventDefault()
+        // e.preventDefault()
         const payload = { start_date, end_date, spot_id: id }
         const newBooking = await dispatch(createBooking(payload))
-        if (newBooking) {
-            history.push(`/spots/${newBooking.spot_id}`)
-        }
+        // if (newBooking) {
+        //     history.push(`/`)
+        // }
     }
 
     return(
