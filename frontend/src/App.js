@@ -10,6 +10,7 @@ import Splash from "./components/SplashPage";
 import Footer from "./components/Footer";
 import ViewOneSpot from "./components/ViewOneSpot";
 import ViewOneBooking from "./components/ViewOneBooking";
+import ViewAllBookings from "./components/ViewAllBookings";
 
 
 
@@ -34,6 +35,9 @@ function App() {
           <Route path="/spots/:id">
             <ViewOneSpot />
           </Route>
+          {/* <Route path="/bookings">
+            <ViewAllBookings />
+          </Route> */}
           <Route path="/bookings/:id">
             <ViewOneBooking />
           </Route>
