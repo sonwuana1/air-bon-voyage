@@ -99,9 +99,9 @@ function SignupFormPage() {
                   onChange={(e) => setConfirmPassword(e.target.value)} required/>
               </Form.Group>
 
-              <Form.Group controlId="formBasicPassword">
-                <Form.Label></Form.Label>
-                <Form.Control type="file" placeholder="Confirm Password" onChange={updateFile} />
+              <Form.Group controlId="formImage">
+                <Form.Label>Upload Profile Image</Form.Label>
+                <Form.Control type="file" onChange={updateFile} />
               </Form.Group>
 
               <Button variant="primary" type="submit">
@@ -111,6 +111,18 @@ function SignupFormPage() {
           </Col>
         </Row>
       </Container>
+      <div>
+        {sessionUser && (
+          <div>
+            <h1>{sessionUser.first_name}</h1>
+            <img
+              style={{ width: "150px" }}
+              src={sessionUser.profileImageUrl}
+              alt="profile"
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
