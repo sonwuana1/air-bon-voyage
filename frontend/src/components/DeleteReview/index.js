@@ -7,7 +7,7 @@ import Modal from 'react-bootstrap/Modal'
 
 
 function DeleteReview({ props }) {
-    console.log(props.review)
+    // console.log(props.review)
     const dispatch = useDispatch();
     const { id } = useParams();
     // console.log(id)

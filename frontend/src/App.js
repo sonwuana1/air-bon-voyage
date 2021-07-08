@@ -35,9 +35,9 @@ function App() {
           <Route path="/spots/:id">
             <ViewOneSpot />
           </Route>
-          <Route path="/bookings">
+          {/* <Route path="/bookings">
             <ViewAllBookings />
-          </Route>
+          </Route> */}
           <Route path="/bookings/:id">
             <ViewOneBooking />
           </Route>
