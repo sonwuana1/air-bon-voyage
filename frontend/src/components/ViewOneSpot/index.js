@@ -140,20 +140,9 @@ const ViewOneSpot = () => {
                 <h2>Book Today!</h2>
                 <CreateBooking />
             </div>
-
             <div className='spotPageContainer'>
                 <h3>Reviews</h3>
                 <CreateReview />
-                {/* {spotState.Reviews?.map(review => { */}
-                    {/* return( */}
-                        {/* <div> */}
-                            {/* <p>Rating: {review.rating}</p> */}
-                            {/* <p>{review.content}</p> */}
-                            {/* <EditReview /> */}
-                            {/* <DeleteReview /> */}
-                        {/* </div> */}
-                    {/* ) */}
-                {/* })} */}
                 <ViewAllReviews />
             </div>
 

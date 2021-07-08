@@ -4,10 +4,11 @@ import { deleteReview } from '../../store/review';
 import Button from 'react-bootstrap/Button'
 
 
-function DeleteReview() {
+function DeleteReview({ props }) {
+    console.log(props.review)
     const dispatch = useDispatch();
     const { id } = useParams();
-    console.log(id)
+    // console.log(id)
 
     const reviewState = useSelector(state => state.review)
     // console.log('REVIEWSTATE', reviewState)
@@ -15,8 +16,10 @@ function DeleteReview() {
     const history = useHistory();
 
     async function handleOnSubmit() {
-        await dispatch(deleteReview(id));
-        history.push(`/`);
+        if (props.review.id) {
+            await dispatch(deleteReview(props.review.id));
+        }
+        // history.push(`/`);
     }
 
     return (

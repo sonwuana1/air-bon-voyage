@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useHistory, useParams } from 'react-router-dom';
-import { editReview, getOneReview } from '../../store/review';
+import { useHistory, useParams } from 'react-router-dom';
+import { editReview } from '../../store/review';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
@@ -9,8 +9,8 @@ import Button from 'react-bootstrap/Button'
 
 
 const EditReview = ({props}) => {
-    console.log(props)
-    console.log(props.review.id)
+    // console.log(props)
+    // console.log(props.review.id)
     const dispatch = useDispatch();
     const history = useHistory();
     const { id } = useParams();
@@ -20,19 +20,7 @@ const EditReview = ({props}) => {
     // console.log('session', userState)
 
     const reviewState = useSelector(state => state.review)
-    console.log('spot', reviewState)
-
-
-    // useEffect(() => {
-    //     reviewState?.map(obj => {
-    //         if (obj.id) {
-    //             dispatch(getOneReview(obj.id));
-    //           }
-    //     })
-    //   }, [dispatch]);
-
-    // const reviewState = useSelector(state => state.review.find(oneReview => oneReview.id ===))
-    // console.log('spot', reviewState)
+    // console.log('reviewState', reviewState)
 
 
     const [rating, setRating] = useState();
@@ -42,14 +30,20 @@ const EditReview = ({props}) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+
     async function handleOnSubmit(e) {
-        e.preventDefault()
+        // e.preventDefault()
         const payload = { rating, content }
         const newReview = await dispatch(editReview(props.review.id, payload))
-        if (newReview) {
-            history.push(`/spots/${id}`)
-        }
+        // if (newReview) {
+        //     history.push(`/spots/${id}`)
+        // }
     }
+
+    // const arr = Object.values(reviewState)
+    // console.log(arr)
+    // const matchingId = arr.find(obj => obj.user_id === userState.id)
+    // console.log(matchingId)
 
 
     return(

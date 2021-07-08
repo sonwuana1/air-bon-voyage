@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { ReviewsBySpotId } from '../../store/review';
 import EditReview from '../EditReview';
+import DeleteReview from '../DeleteReview';
 
 
 const ViewAllReviews = () => {
@@ -28,6 +29,7 @@ const ViewAllReviews = () => {
                             <p>Rating: {review?.rating}</p>
                             <p>{review?.content}</p>
                             <EditReview props={{review}}/>
+                            <DeleteReview props={{review}}/>
                         </div>
                     )
                 })}
