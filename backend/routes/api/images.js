@@ -5,6 +5,7 @@ const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth')
 const { User, Spot, Review, Image } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
+// const { singlePublicFileUpload, singleMulterUpload } = require('../../awsS3');
 
 
 const router = express.Router();
@@ -41,6 +42,19 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
 
     return res.json(newPhoto)
 }))
+
+
+// router.post('/', singleMulterUpload("image"), requireAuth, asyncHandler(async (req, res) => {
+//     const { spot_id, review_id, user_id } = req.body;
+//     const imageFile = await singlePublicFileUpload(req.file);
+//     const newImage = await Image.create({
+//         link: imageFile,
+//         spot_id,
+//         review_id,
+//         user_id,
+//     });
+//     return res.json({ newImage });
+// }));
 
 
 router.put('/:id', requireAuth, asyncHandler(async (req, res) => {

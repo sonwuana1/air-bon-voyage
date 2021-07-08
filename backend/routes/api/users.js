@@ -2,7 +2,7 @@ const express = require('express')
 const asyncHandler = require('express-async-handler');
 
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { User } = require('../../db/models');
+const { User, Image } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const { singlePublicFileUpload, singleMulterUpload } = require('../../awsS3');
@@ -43,7 +43,14 @@ const validateSignup = [
 router.post('/', singleMulterUpload("image"), validateSignup, asyncHandler(async (req, res) => {
       const { email, password, first_name, last_name, description } = req.body;
       const profileImageUrl = await singlePublicFileUpload(req.file);
-      const user = await User.signup({ email, first_name, last_name, password, description, profileImageUrl });
+      console.log(profileImageUrl)
+      const user = await User.signup({ email, first_name, last_name, password, description, profileImageUrl,
+        include: [Image]
+      });
+      const newImage = await Image.create({
+        link: profileImageUrl,
+        user_id: user.id,
+      })
 
       await setTokenCookie(res, user);
 
