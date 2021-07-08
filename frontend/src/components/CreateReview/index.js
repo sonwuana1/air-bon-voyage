@@ -25,12 +25,12 @@ const CreateReview = () => {
     const handleShow = () => setShow(true);
 
     async function handleOnSubmit(e) {
-        e.preventDefault()
+        // e.preventDefault()
         const payload = { rating, content, spot_id: id }
         const newReview = await dispatch(createReview(payload))
-        if (newReview) {
-            history.push(`/spots/${id}`)
-        }
+        // if (newReview) {
+        //     history.push(`/spots/${id}`)
+        // }
     }
 
 
@@ -53,6 +53,7 @@ const CreateReview = () => {
                             <Form.Group controlId="formInteger">
                                 <Form.Label>Rating</Form.Label>
                                 <Form.Control as="select" value={rating} onChange={(e) => setRating(e.target.value)} required>
+                                    <option></option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>

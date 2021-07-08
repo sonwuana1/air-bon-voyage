@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { deleteReview } from '../../store/review';
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
@@ -20,19 +20,15 @@ function DeleteReview({ props }) {
     const reviewState = useSelector(state => state.review)
     // console.log('REVIEWSTATE', reviewState)
 
-    const history = useHistory();
 
     async function handleOnSubmit() {
         if (props.review.id) {
             await dispatch(deleteReview(props.review.id));
         }
-        // history.push(`/`);
     }
 
     return (
         <div>
-            {/* <Button variant="secondary" onClick={handleOnSubmit}>Delete</Button>{' '} */}
-
             <Button variant="secondary" onClick={handleShow}>
                 Delete Review
             </Button>
