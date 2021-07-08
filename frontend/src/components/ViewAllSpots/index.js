@@ -50,19 +50,19 @@ const ViewAllSpots = () => {
                         //         </Card>
                         //     </Col>
                         // </Row>
-                        <div class="card mb-3" >
-                            <div class="row no-gutters">
-                                <div class="col-md-4">
-                                    <img src={obj?.Images[0].link} class="card-img" alt="..." />
+                        <div className="card mb-3" >
+                            <div className="row no-gutters">
+                                <div className="col-md-4">
+                                    <img src={obj?.Images[0].link} className="card-img" alt="..." />
                                 </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">
-                                            <Link to={`spots/${obj.id}`}>{obj.name}</Link>
+                                <div className="col-md-8">
+                                    <div className="card-body">
+                                        <h5 className="card-title">
+                                            <Link to={`spots/${obj?.id}`}>{obj?.name}</Link>
                                         </h5>
-                                        <p class="card-text">{obj.location}</p>
-                                        <p class="card-text">{obj.num_of_guests} guests * {obj.num_of_beds} bed * {obj.num_of_baths} bath</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        <p className="card-text">{obj?.location}</p>
+                                        <p className="card-text">{obj?.num_of_guests} guests * {obj?.num_of_beds} bed * {obj?.num_of_baths} bath</p>
+                                        <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
                                     </div>
                                 </div>
                             </div>

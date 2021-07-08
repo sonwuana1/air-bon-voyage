@@ -8,7 +8,7 @@ function Footer() {
     return (
         <Navbar className="justify-content-center" expand="lg" variant="light" bg="light">
             <Container>
-                <Navbar.Brand href="https://github.com/sonwuana1">About The Developer</Navbar.Brand>
+                <Navbar.Brand href="https://github.com/sonwuana1" className="text-center">About The Developer</Navbar.Brand>
             </Container>
         </Navbar>
     )

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-// import { Redirect, useParams } from "react-router";
 import { useHistory } from "react-router-dom";
-// import {useDispatch} from 'react-redux';
+import { useSelector } from 'react-redux';
 import './Splash.css';
 import ViewAllSpots from "../ViewAllSpots";
 import ViewAllBookings from "../ViewAllBookings";
@@ -10,11 +9,14 @@ import ViewAllBookings from "../ViewAllBookings";
 
 
 function Splash() {
-    // const history = useHistory()
+    const history = useHistory()
+    const sessionUser = useSelector(state => state.session.user);
+    // console.log(sessionUser)
 
-    // useEffect(()=> {
-    //     history.push('/')
-    // }, [])
+    if (!sessionUser) {
+        history.push('/login')
+    }
+
 
     return (
         <div
@@ -24,7 +26,7 @@ function Splash() {
         >
             <h1 className='titleContainer'>Welcome to Air Bon Voyage!</h1>
             <ViewAllSpots />
-            <ViewAllBookings />
+            {/* <ViewAllBookings /> */}
         </div>
     );
 }

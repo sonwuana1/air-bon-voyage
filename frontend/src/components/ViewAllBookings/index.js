@@ -18,10 +18,10 @@ const ViewAllBookings = () => {
     return (
         <div>
             <Container >
-                <h2>Current Bookings: </h2>
+                <h2 className="text-center">Current Bookings: </h2>
                 {bookingState?.map(obj => {
                     return(
-                        <Card style={{ width: '35rem' }}>
+                        <Card style={{ width: '35rem', borderColor: 'purple' }} className="text-center">
                             <Card.Body>
                                 <Card.Title>{obj?.Spot.name}</Card.Title>
                                 {/* <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle> */}
@@ -30,7 +30,6 @@ const ViewAllBookings = () => {
                                         Date: <Link to={`/bookings/${obj?.id}`}>{obj?.start_date} to {obj?.end_date}</Link>
                                     </div>
                                 </Card.Text>
-                                <Card.Link href={`/bookings/${obj?.id}`}>Card Link</Card.Link>
                             </Card.Body>
                         </Card>
                         // <Link to={`/bookings/${obj?.id}`}>{obj?.start_date} to {obj?.end_date}</Link>
