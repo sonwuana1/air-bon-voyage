@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { deleteBooking } from '../../store/booking';
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
+import Image from 'react-bootstrap/Image'
 
 
 
@@ -32,7 +33,8 @@ function DeleteBooking() {
                 <Modal.Header closeButton>
                 <Modal.Title>WAIT! You're about to Delete this booking!</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>What about our vacation?</Modal.Body>
+                <Modal.Body>What about our vacation?
+                </Modal.Body>
                 <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
                     Never Mind
