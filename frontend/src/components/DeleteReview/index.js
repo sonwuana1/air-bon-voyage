@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { deleteReview } from '../../store/review';
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
@@ -9,7 +8,7 @@ import Modal from 'react-bootstrap/Modal'
 function DeleteReview({ props }) {
     // console.log(props.review)
     const dispatch = useDispatch();
-    const { id } = useParams();
+    // const { id } = useParams();
     // console.log(id)
 
     const [show, setShow] = useState(false);
@@ -17,7 +16,7 @@ function DeleteReview({ props }) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const reviewState = useSelector(state => state.review)
+    // const reviewState = useSelector(state => state.review)
     // console.log('REVIEWSTATE', reviewState)
 
 

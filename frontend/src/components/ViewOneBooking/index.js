@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { getOneBooking } from '../../store/booking';
 import UpdateBooking from '../UpdateBooking';
 import DeleteBooking from '../DeleteBooking';

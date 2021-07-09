@@ -1,17 +1,14 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { getOneSpot } from '../../store/spot';
 import CreateBooking from '../CreateBooking';
 import ViewAllReviews from '../ViewAllReviews';
 import CreateReview from '../CreateReview';
-import EditReview from '../EditReview';
-import DeleteReview from '../DeleteReview';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import './ViewOneSpot.css';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import MyMaps from '../MyMaps';
 
 
@@ -61,14 +58,6 @@ const ViewOneSpot = () => {
                             )
                         })}
                         <MyMaps props={{spotState}}/>
-                        {/* <GoogleMap googleMapsApiKey='AIzaSyAUN3kd3mSSvon94EFE-xpunp5dWR20gUM'
-                            mapContainerStyle={mapStyles}
-                            zoom={16}
-                            center={newCenter}
-
-                            >
-                            <Marker position={newCenter}/>
-                        </GoogleMap> */}
                     </Row>
                 </Container>
             </div>
