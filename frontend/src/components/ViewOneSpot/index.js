@@ -40,7 +40,7 @@ const ViewOneSpot = () => {
 
 
     return (
-        <div>
+        <div className='upperSpotPageContainer'>
             <div className='titleContainer'>
                 <h2>{spotState.name}</h2>
             </div>

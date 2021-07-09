@@ -19,11 +19,7 @@ function Splash() {
 
 
     return (
-        <div
-        // style={{
-        //     backgroundColor: "white",
-        //     }}
-        >
+        <div className='splashPageContainer'>
             <h1 className='titleContainer'>Welcome to Air Bon Voyage!</h1>
             <ViewAllSpots />
             <ViewAllBookings />
