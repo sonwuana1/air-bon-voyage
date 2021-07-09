@@ -91,7 +91,7 @@ const ViewOneSpot = () => {
         }
     ];
 
-    const newCenter = locations.find(item => item.id == id).location
+    const newCenter = locations.find(item => item.id === id).location
     // console.log(newCenter)
 
 
