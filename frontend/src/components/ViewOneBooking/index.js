@@ -16,6 +16,11 @@ const ViewOneBooking = () => {
     const bookingState = useSelector(state => state.booking)
     // console.log('STATEEEEEEE', bookingState)
 
+    const sessionUser = useSelector(state => state.session.user);
+    if (!sessionUser) {
+        history.push('/login')
+    }
+
     useEffect(() => {
         if (id) {
             dispatch(getOneBooking(id))
