@@ -98,6 +98,102 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        rating: 5,
+        content: "What a very nice hotel.",
+        user_id: 2,
+        spot_id: 7,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        rating: 3,
+        content: "It was a little flashy for my taste 😒",
+        user_id: 3,
+        spot_id: 7,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        rating: 3,
+        content: "Place looks kind of old...",
+        user_id: 1,
+        spot_id: 8,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        rating: 2,
+        content: "The beds were too hard!",
+        user_id: 2,
+        spot_id: 8,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        rating: 4,
+        content: "I love this place 😍",
+        user_id: 1,
+        spot_id: 9,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        rating: 4,
+        content: "a little small but cute!",
+        user_id: 3,
+        spot_id: 9,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        rating: 5,
+        content: "WOW JUST WOW 😱",
+        user_id: 2,
+        spot_id: 10,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        rating: 5,
+        content: "this place was made for BTS!!!!!!",
+        user_id: 3,
+        spot_id: 10,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        rating: 4,
+        content: "cute, small, and convenient",
+        user_id: 2,
+        spot_id: 11,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        rating: 5,
+        content: "10/10 would def recommend 👍",
+        user_id: 1,
+        spot_id: 11,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        rating: 4,
+        content: "cute little luxurious cubbies in the heart of the city!",
+        user_id: 3,
+        spot_id: 12,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        rating: 1,
+        content: "Absolutely NO PRIVACY 🤬",
+        user_id: 3,
+        spot_id: 12,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
 
     ], {});
   },

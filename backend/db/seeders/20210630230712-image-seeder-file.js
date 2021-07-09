@@ -110,6 +110,114 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },
+    {
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/90041808.jpg?k=69559858a71f9718bc8686ed95257a0265a40738e9c7165203c618ec81b14e0b&o=&hp=1',
+      spot_id: 7,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/90041783.jpg?k=e70d95e67ef5db88feb4d9addb0e4938b8d357ee5fb11755b2fffaa7fbd4552e&o=&hp=1',
+      spot_id: 7,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/90041805.jpg?k=2e8d7e8fdb7d230c4c4a2d548461e2e92cba2b290721f302dfd74d4f9f0d9155&o=&hp=1',
+      spot_id: 7,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/230960593.jpg?k=16b12374fe21021ba01e1c1c5f045cf88c8e0a0ddec1fe7e2fa93897113ccb52&o=&hp=1',
+      spot_id: 8,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/252636273.jpg?k=0b69a5a26f17b2ae6927beae1cbc39cdb05c36ad88887255e0ad13952542572f&o=&hp=1',
+      spot_id: 8,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/196971887.jpg?k=0835c96c2bb1a4b214ad1a650d5b0f7d0429bc9bcff64964c48dfd5e99979e20&o=&hp=1',
+      spot_id: 8,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/168529249.jpg?k=7ec8c03cacb05ad1bda3697a99d9daa2435bebff70565bb047c9e45822d9b034&o=&hp=1',
+      spot_id: 9,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/263707393.jpg?k=825f17bccaabc2fe2b0991537fd271aaae97d3a8fa03fb3f3dda23b52f11c9f2&o=&hp=1',
+      spot_id: 9,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/263707206.jpg?k=082dac55cce4f581b6362674975a42b14d14640a806071756c5c982f65d8687c&o=&hp=1',
+      spot_id: 9,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/261720764.jpg?k=9e9c9f9f822b09a0de43eb6938390dd1f99c720af7b029ff67e7ab4fee60af3b&o=&hp=1',
+      spot_id: 10,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/261720458.jpg?k=2dfc9033fa39c5e0f3c61573cf9db305543823169f0f9f6b000c6ceeec0f6f6c&o=&hp=1',
+      spot_id: 10,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/261720895.jpg?k=73154ec52069603a87c5119a8720f7d3fcfa7c95df1a0b5c8238cd6b09bf86fa&o=&hp=1',
+      spot_id: 10,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/221261208.jpg?k=935228ff3c9f025bf906f4faf80d1b8a41ff5faf595488cf08608b1384d2e655&o=&hp=1',
+      spot_id: 11,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/221256745.jpg?k=688299c361d4af4be09112ec29f03ca457d940adeab923c3882614f8e323be8e&o=&hp=1',
+      spot_id: 11,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/221256764.jpg?k=cd9882cc71d4aa7b8665d1c05e1a013b93867168b649b76421d69b7d3f1ecef7&o=&hp=1',
+      spot_id: 11,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/109815391.jpg?k=f192dd7a485065bff93b5fd3e2598aeb52d46849185eaecda6a169d61d929a88&o=&hp=1',
+      spot_id: 12,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/109815387.jpg?k=b1f34b51d2d427612ac8637705886d854fd2f435ad5d3a03d85524d1db32d50c&o=&hp=1',
+      spot_id: 12,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      link: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/109815332.jpg?k=6a751ab4c332717979afde5327b4a2e4fc1efc1d17de40fe9a505155bca801e6&o=&hp=1',
+      spot_id: 12,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
 
   ], {});
   },
