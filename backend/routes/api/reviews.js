@@ -2,7 +2,7 @@ const express = require('express')
 const asyncHandler = require('express-async-handler');
 
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
-const { Spot, Review, Image } = require('../../db/models');
+const { Spot, Review, Image, User } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
@@ -21,7 +21,7 @@ router.get('/spots/:id', requireAuth, asyncHandler(async (req, res) => {
     // console.log('REQQQQQQQQ', req.params.id)
     const allReviewsBySpot = await Review.findAll({
         where: { spot_id: req.params.id },
-        include: [Spot, Image],
+        include: [Spot, Image, User],
     })
 
     return res.json(allReviewsBySpot)
