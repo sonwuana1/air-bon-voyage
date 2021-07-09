@@ -10,5 +10,6 @@ module.exports = {
     jwtConfig: {
       secret: process.env.JWT_SECRET,
       expiresIn: process.env.JWT_EXPIRES_IN,
+      googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API,
     },
 };
