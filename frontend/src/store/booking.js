@@ -104,7 +104,7 @@ const bookingReducer = (state=initialState, action) => {
             })
             return newState;
         case ADD_ONE_BOOKING:
-            console.log(action)
+            // console.log(action)
             if (!state[action.booking.id]) {
                 const newState = { ...state, ...action.booking }
                 return newState;

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+// import { useHistory, useParams } from 'react-router-dom';
 import { editReview } from '../../store/review';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal'
@@ -12,14 +12,14 @@ const EditReview = ({props}) => {
     // console.log(props)
     // console.log(props.review.id)
     const dispatch = useDispatch();
-    const history = useHistory();
-    const { id } = useParams();
+    // const history = useHistory();
+    // const { id } = useParams();
     // console.log(id)
 
-    const userState = useSelector(state => state.session.user)
+    // const userState = useSelector(state => state.session.user)
     // console.log('session', userState)
 
-    const reviewState = useSelector(state => state.review)
+    // const reviewState = useSelector(state => state.review)
     // console.log('reviewState', reviewState)
 
 
@@ -35,15 +35,8 @@ const EditReview = ({props}) => {
         // e.preventDefault()
         const payload = { rating, content }
         const newReview = await dispatch(editReview(props.review.id, payload))
-        // if (newReview) {
-        //     history.push(`/spots/${id}`)
-        // }
     }
 
-    // const arr = Object.values(reviewState)
-    // console.log(arr)
-    // const matchingId = arr.find(obj => obj.user_id === userState.id)
-    // console.log(matchingId)
 
 
     return(

@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { createReview } from '../../store/review';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal'
@@ -10,11 +10,11 @@ import Button from 'react-bootstrap/Button'
 
 const CreateReview = () => {
     const dispatch = useDispatch();
-    const history = useHistory();
+    // const history = useHistory();
     const { id } = useParams();
     // console.log(id)
 
-    const reviewState = useSelector(state => state.review)
+    // const reviewState = useSelector(state => state.review)
     // console.log('REVIEWSTATE', reviewState)
 
     const [rating, setRating] = useState();
@@ -28,9 +28,6 @@ const CreateReview = () => {
         // e.preventDefault()
         const payload = { rating, content, spot_id: id }
         const newReview = await dispatch(createReview(payload))
-        // if (newReview) {
-        //     history.push(`/spots/${id}`)
-        // }
     }
 
 

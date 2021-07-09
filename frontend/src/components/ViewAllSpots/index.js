@@ -3,24 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getAllSpots } from '../../store/spot';
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-// import { Map, GoogleApiWrapper, MapContainer } from 'google-maps-react';
 
 
-const mapStyles = {
-    width: '100%',
-    height: '100%',
-  };
 
 
 const ViewAllSpots = () => {
     const dispatch = useDispatch()
     const spotState = useSelector(state => Object.values(state.spot))
     // console.log('STATEEEEEEE', spotState)
-    const history = useDispatch()
 
 
     useEffect(() => {
@@ -34,22 +24,6 @@ const ViewAllSpots = () => {
             {/* <h2> */}
                 {spotState.map(obj => {
                     return (
-                        // <Row>
-                        //     <Col>
-                        //         <Card style={{ width: '18rem' }} border="light">
-                        //             <Card.Img variant="top" src={obj.Images[0].link} />
-                        //             <Card.Body>
-                        //                 <Card.Title>
-                        //                     <Link to={`spots/${obj.id}`}>{obj.name}</Link>
-                        //                 </Card.Title>
-                        //                 <Card.Text>
-                        //                     {obj.location}
-                        //                 </Card.Text>
-                        //                 {/* <Button variant="primary">Book Today!</Button> */}
-                        //             </Card.Body>
-                        //         </Card>
-                        //     </Col>
-                        // </Row>
                         <div className="card mb-3" >
                             <div className="row no-gutters">
                                 <div className="col-md-4">
@@ -76,5 +50,3 @@ const ViewAllSpots = () => {
 
 
 export default ViewAllSpots;
-// export default (ViewAllSpots, GoogleApiWrapper({
-//     apiKey: 'AIzaSyAUN3kd3mSSvon94EFE-xpunp5dWR20gUM'})(MapContainer));

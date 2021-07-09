@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory, useParams } from 'react-router-dom';
 import { updateBooking } from '../../store/booking';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
@@ -13,7 +13,7 @@ const UpdateBooking = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const { id } = useParams();
-    const bookingState = useSelector(state => state.booking);
+    // const bookingState = useSelector(state => state.booking);
     const [start_date, setStartDate] = useState('');
     const [end_date, setEndDate] = useState('');
 
