@@ -27,7 +27,7 @@ function DeleteBooking() {
     return (
         <div>
             {/* <button type="submit" onClick={handleOnSubmit}>Delete</button> */}
-            <Button variant="secondary" onClick={handleShow}>Delete</Button>{' '}
+            <Button variant="outline-danger" onClick={handleShow}>Delete</Button>{' '}
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
@@ -39,7 +39,7 @@ function DeleteBooking() {
                 <Button variant="secondary" onClick={handleClose}>
                     Never Mind
                 </Button>
-                <Button variant="primary" onClick={handleOnSubmit}>
+                <Button variant="outline-primary" onClick={handleOnSubmit}>
                     Yes Please
                 </Button>
                 </Modal.Footer>

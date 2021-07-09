@@ -33,7 +33,7 @@ const CreateReview = () => {
 
     return(
         <div>
-            <Button variant="primary" onClick={handleShow}>
+            <Button variant="outline-primary" onClick={handleShow}>
                 Add Review
             </Button>
 
@@ -62,7 +62,7 @@ const CreateReview = () => {
                                 <Form.Label>Review</Form.Label>
                                 <Form.Control as="textarea" rows={3} value={content} onChange={(e) => setContent(e.target.value)} />
                             </Form.Group>
-                            <Button variant="primary" type="submit" onClick={handleClose}>Submit</Button>
+                            <Button variant="outline-primary" type="submit" onClick={handleClose}>Submit</Button>
                         </Form>
                     </Modal.Body>
                 <Modal.Footer>

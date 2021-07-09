@@ -28,7 +28,7 @@ function DeleteReview({ props }) {
 
     return (
         <div>
-            <Button variant="secondary" onClick={handleShow}>
+            <Button variant="outline-danger" onClick={handleShow}>
                 Delete Review
             </Button>
 
@@ -41,7 +41,7 @@ function DeleteReview({ props }) {
                 <Button variant="secondary" onClick={handleClose}>
                     Never Mind
                 </Button>
-                <Button variant="primary" onClick={handleOnSubmit}>
+                <Button variant="outline-primary" onClick={handleOnSubmit}>
                     Yes Please
                 </Button>
                 </Modal.Footer>

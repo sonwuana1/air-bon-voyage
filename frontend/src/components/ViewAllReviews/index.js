@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { ReviewsBySpotId } from '../../store/review';
 import EditReview from '../EditReview';
 import DeleteReview from '../DeleteReview';
+import Card from 'react-bootstrap/Card'
 
 
 const ViewAllReviews = () => {
@@ -24,13 +25,32 @@ const ViewAllReviews = () => {
             <h2 key='allReviews'>
                 {reviewState?.map(review => {
                     return (
-                        <div>
-                            <p>Anonymous</p>
-                            <p key='rating'>Rating: {review?.rating}</p>
-                            <p key='content'>{review?.content}</p>
-                            <EditReview props={{review}}/>
-                            <DeleteReview props={{review}}/>
-                        </div>
+                        // <div>
+                        //     <p>Anonymous</p>
+                        //     <p key='rating'>Rating: {review?.rating}</p>
+                        //     <p key='content'>{review?.content}</p>
+                        //     <EditReview props={{review}}/>
+                        //     <DeleteReview props={{review}}/>
+                        // </div>
+                        <Card border="light">
+                            <Card.Header>{review?.User?.first_name}</Card.Header>
+                            <Card.Body>
+                                <blockquote className="blockquote mb-0">
+                                    <p key='rating'>
+                                    {' '}
+                                    Rating: {review?.rating}{' '}
+                                    </p>
+                                    <p key='content'>
+                                    {' '}
+                                    Rating: {review?.content}{' '}
+                                    </p>
+                                    <footer >
+                                        <EditReview props={{review}}/>
+                                        <DeleteReview props={{review}}/>
+                                    </footer>
+                                </blockquote>
+                            </Card.Body>
+                      </Card>
                     )
                 })}
             </h2>

@@ -40,7 +40,7 @@ const ViewOneSpot = () => {
 
 
     return (
-        <div>
+        <div className='upperSpotPageContainer'>
             <div className='titleContainer'>
                 <h2>{spotState.name}</h2>
             </div>
@@ -75,9 +75,9 @@ const ViewOneSpot = () => {
                 <CreateBooking />
             </div>
             <div className='spotPageContainer'>
-                <h3>Reviews</h3>
-                <CreateReview />
+                <h3>Reviews:</h3>
                 <ViewAllReviews />
+                <CreateReview />
             </div>
 
         </div>

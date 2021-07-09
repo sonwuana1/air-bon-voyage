@@ -41,7 +41,7 @@ const EditReview = ({props}) => {
 
     return(
         <div>
-            <Button variant="primary" onClick={handleShow} disabled={''}>
+            <Button variant="outline-primary" onClick={handleShow} disabled={''}>
                 Edit Review
             </Button>
 
@@ -69,7 +69,7 @@ const EditReview = ({props}) => {
                                 <Form.Label>Review</Form.Label>
                                 <Form.Control as="textarea" rows={3} value={content} onChange={(e) => setContent(e.target.value)} />
                             </Form.Group>
-                            <Button variant="primary" type="submit" onClick={handleClose}>Update</Button>
+                            <Button variant="outline-primary" type="submit" onClick={handleClose}>Update</Button>
                         </Form>
                     </Modal.Body>
                 <Modal.Footer>
