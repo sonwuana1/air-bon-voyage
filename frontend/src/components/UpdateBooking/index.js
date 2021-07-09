@@ -42,7 +42,7 @@ const UpdateBooking = () => {
                             <Form.Label>End Date: </Form.Label>
                             <Form.Control type="date" value={end_date} onChange={(e) => setEndDate(e.target.value)} required/>
                         </Form.Group>
-                        <Button variant="primary" type="submit">
+                        <Button variant="outline-primary" type="submit">
                             Update!
                         </Button>
                     </Col>

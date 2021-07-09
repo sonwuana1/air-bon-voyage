@@ -75,9 +75,9 @@ const ViewOneSpot = () => {
                 <CreateBooking />
             </div>
             <div className='spotPageContainer'>
-                <h3>Reviews</h3>
-                <CreateReview />
+                <h3>Reviews:</h3>
                 <ViewAllReviews />
+                <CreateReview />
             </div>
 
         </div>
