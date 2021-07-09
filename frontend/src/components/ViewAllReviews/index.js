@@ -20,14 +20,14 @@ const ViewAllReviews = () => {
 
 
     return (
-        <div>
-            <h2>
+        <div key='reviews'>
+            <h2 key='allReviews'>
                 {reviewState?.map(review => {
                     return (
                         <div>
                             <p>Anonymous</p>
-                            <p>Rating: {review?.rating}</p>
-                            <p>{review?.content}</p>
+                            <p key='rating'>Rating: {review?.rating}</p>
+                            <p key='content'>{review?.content}</p>
                             <EditReview props={{review}}/>
                             <DeleteReview props={{review}}/>
                         </div>
