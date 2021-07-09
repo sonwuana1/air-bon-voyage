@@ -5,7 +5,7 @@ import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 
 const MyMaps= ({props}) => {
 
-    console.log(props)
+    // console.log(props)
 
 // const [currentPosition, setCurrentPosition] = useState({lat:43.11016617798622,lng:-89.48826131670266})
 
@@ -71,13 +71,13 @@ const { isLoaded } = useJsApiLoader({
     ];
 
     const newCenter = locations.find(item => item.id === props.spotState.id)?.location
-    console.log(newCenter)
+    // console.log(newCenter)
 
 
     return (
       <div className="map_page__container">
 
-        <div style={{ height: '900px', width: '900px' }}>
+        <div style={{ height: '300px', width: '900px' }}>
             {isLoaded && <GoogleMap
               mapContainerStyle={containerStyle}
               zoom={16}
