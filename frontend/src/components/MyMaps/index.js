@@ -18,8 +18,10 @@ const { isLoaded } = useJsApiLoader({
   })
 
   const containerStyle = {
-    height: "50vh",
-    width: "100%"
+    // height: "50vh",
+    // width: "100%"
+    width: '800px',
+    height: '400px'
   };
 
   const [map, setMap] = useState(null)
@@ -123,7 +125,7 @@ const { isLoaded } = useJsApiLoader({
         <Container>
             <Row>
                 <div className="map_page__container">
-                    <div style={{ height: '300px', width: '900px' }}>
+                    <div style={{ height: '450px', width: '900px' }}>
                         {isLoaded && <GoogleMap
                         mapContainerStyle={containerStyle}
                         zoom={16}
