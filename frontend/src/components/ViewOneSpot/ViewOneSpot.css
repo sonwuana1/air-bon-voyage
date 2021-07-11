@@ -9,3 +9,9 @@
     display: grid;
     padding: 25px;
 }
+
+.carouselContainer {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}
