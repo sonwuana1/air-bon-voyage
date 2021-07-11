@@ -10,6 +10,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import './ViewOneSpot.css';
 import MyMaps from '../MyMaps';
+import Carousel from 'react-bootstrap/Carousel'
 
 
 
@@ -45,18 +46,26 @@ const ViewOneSpot = () => {
                 <h2>{spotState.name}</h2>
             </div>
             <div>
-                <Container>
-                    <Row>
+                <div className='carouselContainer'>
+                    <Carousel>
                         {spotState.Images?.map(pic => {
                             return(
-                                <Col>
-                                    <img src={pic.link} alt='' width={400}></img>
-                                </Col>
+                                // <Col>
+                                //     <img src={pic.link} alt='' width={400}></img>
+                                // </Col>
+                                <Carousel.Item interval={2500}>
+                                    <img
+                                    className="d-block "
+                                    src={`${pic.link}/text=First slide&bg=373940`}
+                                    alt="First slide"
+                                    width={500}
+                                    />
+                                </Carousel.Item>
                             )
                         })}
-                        <MyMaps props={{spotState}}/>
-                    </Row>
-                </Container>
+                    </Carousel>
+                </div>
+                <MyMaps props={{spotState}}/>
             </div>
             <div className='spotPageContainer'>
                 <h3>{spotState.location}</h3>
