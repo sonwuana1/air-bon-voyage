@@ -1,0 +1,6 @@
+
+.map_page__container {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}

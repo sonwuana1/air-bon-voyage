@@ -99,10 +99,10 @@ function SignupFormPage() {
                   onChange={(e) => setConfirmPassword(e.target.value)} required/>
               </Form.Group>
 
-              <Form.Group controlId="formImage">
+              {/* <Form.Group controlId="formImage">
                 <Form.Label>Upload Profile Image</Form.Label>
                 <Form.Control type="file" onChange={updateFile} />
-              </Form.Group>
+              </Form.Group> */}
 
               <Button variant="primary" type="submit">
                 Sign Up

@@ -43,6 +43,7 @@ function LoginFormPage() {
 
   return (
     <div className="test">
+      <div className='loginTitleContainer'>Welcome to Air Bon Voyage!</div>
       <Container>
         <Row>
           <Col sm={4}>
@@ -68,8 +69,8 @@ function LoginFormPage() {
               </Form.Group>
               <Button variant="primary" type="submit">
                 Login
-              </Button>
-              <Button variant="primary" type="button" onClick={DemoLogin}>
+              </Button>{' '}
+              <Button variant="info" type="button" onClick={DemoLogin}>
                 Demo User
               </Button>
             </Form>

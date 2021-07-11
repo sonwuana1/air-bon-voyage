@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { deleteReview } from '../../store/review';
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
@@ -16,6 +16,7 @@ function DeleteReview({ props }) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const userState = useSelector(state => state.session.user)
     // const reviewState = useSelector(state => state.review)
     // console.log('REVIEWSTATE', reviewState)
 
@@ -28,7 +29,7 @@ function DeleteReview({ props }) {
 
     return (
         <div>
-            <Button variant="outline-danger" onClick={handleShow}>
+            <Button variant="outline-danger" onClick={handleShow} disabled={props.review.User.id !== userState.id}>
                 Delete Review
             </Button>
 
