@@ -29,24 +29,22 @@ const ViewAllBookings = () => {
                 <h2 className="text-center">Current Bookings: </h2>
                 {bookingState?.map(obj => {
                     return(
-                        <Card style={{ width: '35rem', borderColor: 'purple' }} className="text-center">
-                            <Card.Body>
-                                <Card.Title>{obj?.Spot?.name}</Card.Title>
-                                {/* <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle> */}
-                                <Card.Text>
-                                    <NavLink to={`/bookings/${obj?.id}`}>{obj?.start_date} to {obj?.end_date}</NavLink>
-                                </Card.Text>
-                            </Card.Body>
+                        <Card className="text-center">
+                            {/* <Card.Header>Featured</Card.Header> */}
+                                <Card.Body>
+                                    <Card.Title>{obj?.Spot?.name}</Card.Title>
+                                    <Card.Text>
+                                        <NavLink to={`/bookings/${obj?.id}`}>{obj?.start_date} to {obj?.end_date}</NavLink>
+                                    </Card.Text>
+                                    {/* <Button variant="primary">Go somewhere</Button> */}
+                                </Card.Body>
+                            {/* <Card.Footer className="text-muted"></Card.Footer> */}
                         </Card>
-                        // <div>
-                        //     <NavLink to={`/bookings/${obj?.id}`}>{obj?.start_date} to {obj?.end_date}</NavLink>
-                        // </div>
                     )
                 })}
             </Container>
         </div>
     )
-
 }
 
 
