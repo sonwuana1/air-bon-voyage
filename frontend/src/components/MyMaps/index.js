@@ -1,5 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import './MyMaps.css'
 
 
 
@@ -15,8 +18,8 @@ const { isLoaded } = useJsApiLoader({
   })
 
   const containerStyle = {
-    height: "40vh",
-    width: "50%"
+    height: "50vh",
+    width: "100%"
   };
 
   const [map, setMap] = useState(null)
@@ -117,21 +120,23 @@ const { isLoaded } = useJsApiLoader({
 
 
     return (
-      <div className="map_page__container">
-
-        <div style={{ height: '300px', width: '900px' }}>
-            {isLoaded && <GoogleMap
-              mapContainerStyle={containerStyle}
-              zoom={16}
-              center={newCenter}
-              onUnmount={onUnmount}
-              >
-                <Marker position={newCenter}/>
-            </GoogleMap>}
-        </div>
-      </div>
+        <Container>
+            <Row>
+                <div className="map_page__container">
+                    <div style={{ height: '300px', width: '900px' }}>
+                        {isLoaded && <GoogleMap
+                        mapContainerStyle={containerStyle}
+                        zoom={16}
+                        center={newCenter}
+                        onUnmount={onUnmount}
+                        >
+                            <Marker position={newCenter}/>
+                        </GoogleMap>}
+                    </div>
+                </div>
+            </Row>
+        </Container>
     );
-
 }
 
 export default MyMaps

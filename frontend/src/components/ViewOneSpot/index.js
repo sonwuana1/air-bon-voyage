@@ -50,10 +50,7 @@ const ViewOneSpot = () => {
                         {spotState.Images?.map(pic => {
                             return(
                                 <Col>
-                                    <div>
-                                        <img src={pic.link} alt='' width={300}></img>
-
-                                    </div>
+                                    <img src={pic.link} alt='' width={400}></img>
                                 </Col>
                             )
                         })}
