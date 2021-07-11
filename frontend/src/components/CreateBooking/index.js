@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { createBooking } from '../../store/booking';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
@@ -11,6 +11,7 @@ import Button from 'react-bootstrap/Button';
 
 const CreateBooking = () => {
     const dispatch = useDispatch();
+    const history = useHistory;
     const { id } = useParams();
     // console.log(id)
     // const bookingState = useSelector(state => state.booking);
@@ -22,6 +23,10 @@ const CreateBooking = () => {
         // e.preventDefault()
         const payload = { start_date, end_date, spot_id: id }
         const newBooking = await dispatch(createBooking(payload))
+
+        if (newBooking) {
+            history.push(`/`)
+        }
     }
 
     return(
