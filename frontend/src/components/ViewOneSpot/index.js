@@ -59,8 +59,8 @@ const ViewOneSpot = () => {
                 </Container>
             </div>
             <div className='spotPageContainer'>
-                <h4>{spotState.location}</h4>
-                <h4>${spotState.price}</h4>
+                <h3>{spotState.location}</h3>
+                <h4>${spotState.price} / night</h4>
                 <p>{spotState.description}</p>
                 <p>Number of guests: {spotState.num_of_guests}</p>
                 <p>Number of beds: {spotState.num_of_beds}</p>

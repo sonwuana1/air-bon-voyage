@@ -25,13 +25,6 @@ const ViewAllReviews = () => {
             <h2 key='allReviews'>
                 {reviewState?.map(review => {
                     return (
-                        // <div>
-                        //     <p>Anonymous</p>
-                        //     <p key='rating'>Rating: {review?.rating}</p>
-                        //     <p key='content'>{review?.content}</p>
-                        //     <EditReview props={{review}}/>
-                        //     <DeleteReview props={{review}}/>
-                        // </div>
                         <Card border="light">
                             <Card.Header>{review?.User?.first_name}</Card.Header>
                             <Card.Body>

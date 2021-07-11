@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // import { useHistory, useParams } from 'react-router-dom';
 import { editReview } from '../../store/review';
 import Form from 'react-bootstrap/Form';
@@ -10,13 +10,13 @@ import Button from 'react-bootstrap/Button'
 
 const EditReview = ({props}) => {
     // console.log(props)
-    // console.log(props.review.id)
+    // console.log(props.review.User.id)
     const dispatch = useDispatch();
     // const history = useHistory();
     // const { id } = useParams();
     // console.log(id)
 
-    // const userState = useSelector(state => state.session.user)
+    const userState = useSelector(state => state.session.user)
     // console.log('session', userState)
 
     // const reviewState = useSelector(state => state.review)
@@ -41,7 +41,7 @@ const EditReview = ({props}) => {
 
     return(
         <div>
-            <Button variant="outline-primary" onClick={handleShow} disabled={''}>
+            <Button variant="outline-primary" onClick={handleShow} disabled={props.review.User.id !== userState.id}>
                 Edit Review
             </Button>
 
