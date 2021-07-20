@@ -10,7 +10,7 @@ import Splash from "./components/SplashPage";
 import Footer from "./components/Footer";
 import ViewOneSpot from "./components/ViewOneSpot";
 import ViewOneBooking from "./components/ViewOneBooking";
-import ViewAllBookings from "./components/ViewAllBookings";
+// import ViewAllBookings from "./components/ViewAllBookings";
 
 
 

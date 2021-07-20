@@ -70,13 +70,13 @@ function SignupFormPage() {
 
               <Form.Group controlId="formFirstName">
                 <Form.Label className="text-white">First Name</Form.Label>
-                <Form.Control type="text" name="first_name" placeholder="Enter First Name" value={first_name}
+                <Form.Control type="text" placeholder="Enter First Name" value={first_name}
                   onChange={(e) => setFirstName(e.target.value)} required/>
               </Form.Group>
 
               <Form.Group controlId="formLastName">
                 <Form.Label className="text-white">Last Name</Form.Label>
-                <Form.Control type="text" name="last_name" placeholder="Enter Last Name" value={last_name}
+                <Form.Control type="text" placeholder="Enter Last Name" value={last_name}
                   onChange={(e) => setLastName(e.target.value)} required/>
               </Form.Group>
 
@@ -111,8 +111,8 @@ function SignupFormPage() {
           </Col>
         </Row>
       </Container>
-      <div>
-        {/* {sessionUser && (
+      {/* <div>
+        {sessionUser && (
           <div>
             <h1>{sessionUser.first_name}</h1>
             <img
@@ -121,8 +121,8 @@ function SignupFormPage() {
               alt="profile"
             />
           </div>
-        )} */}
-      </div>
+        )}
+      </div> */}
     </div>
   );
 }
