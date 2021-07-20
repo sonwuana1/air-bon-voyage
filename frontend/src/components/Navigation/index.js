@@ -37,7 +37,7 @@ function Navigation({ isLoaded }){
 
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" >
       <Navbar.Text>
       Signed in as: <h3>{sessionUser?.first_name}</h3>
       </Navbar.Text>

@@ -11,7 +11,7 @@ import Button from 'react-bootstrap/Button';
 
 const CreateBooking = () => {
     const dispatch = useDispatch();
-    const history = useHistory;
+    const history = useHistory();
     const { id } = useParams();
     // console.log(id)
     // const bookingState = useSelector(state => state.booking);
@@ -20,7 +20,7 @@ const CreateBooking = () => {
 
 
     async function handleOnSubmit(e) {
-        // e.preventDefault()
+        e.preventDefault()
         const payload = { start_date, end_date, spot_id: id }
         const newBooking = await dispatch(createBooking(payload))
 
