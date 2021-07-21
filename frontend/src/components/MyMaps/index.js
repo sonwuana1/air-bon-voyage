@@ -2,7 +2,8 @@ import React, { useState, useCallback } from 'react';
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
-import './MyMaps.css'
+// import './MyMaps.css'
+import Card from 'react-bootstrap/Card'
 
 
 
@@ -20,8 +21,10 @@ const { isLoaded } = useJsApiLoader({
   const containerStyle = {
     // height: "50vh",
     // width: "100%"
-    width: '800px',
-    height: '400px'
+    // width: '800px',
+    // height: '400px'
+    width: "100%",
+    height: "100%"
   };
 
   const [map, setMap] = useState(null)
@@ -124,7 +127,7 @@ const { isLoaded } = useJsApiLoader({
     return (
         <Container>
             <Row>
-                <div className="map_page__container">
+                {/* <div className="map_page__container">
                     <div style={{ height: '450px', width: '900px' }}>
                         {isLoaded && <GoogleMap
                         mapContainerStyle={containerStyle}
@@ -135,7 +138,21 @@ const { isLoaded } = useJsApiLoader({
                             <Marker position={newCenter}/>
                         </GoogleMap>}
                     </div>
-                </div>
+                </div> */}
+                <Card>
+                    <Card.Body>
+                        <div style={{ height: '375px', width: '375px' }}>
+                            {isLoaded && <GoogleMap
+                            mapContainerStyle={containerStyle}
+                            zoom={16}
+                            center={newCenter}
+                            onUnmount={onUnmount}
+                            >
+                                <Marker position={newCenter}/>
+                            </GoogleMap>}
+                        </div>
+                    </Card.Body>
+                </Card>
             </Row>
         </Container>
     );
