@@ -14,12 +14,12 @@ const ViewAllReviews = () => {
     const reviewState = useSelector(state => Object.values(state.review))
     // console.log('REVIEWWWWWW', reviewState)
 
-    const ratingStars = (num) => {
-        if (num === 1) return '⭐'
-        if (num === 2) return '⭐⭐'
-        if (num === 3) return '⭐⭐⭐'
-        if (num === 4) return '⭐⭐⭐⭐'
-        if (num === 5) return '⭐⭐⭐⭐⭐'
+    const ratingHearts = (num) => {
+        if (num === 1) return '💜'
+        if (num === 2) return '💜💜'
+        if (num === 3) return '💜💜💜'
+        if (num === 4) return '💜💜💜💜'
+        if (num === 5) return '💜💜💜💜💜'
     }
 
 
@@ -39,7 +39,7 @@ const ViewAllReviews = () => {
                                 <blockquote className="blockquote mb-0">
                                     <p key='rating'>
                                     {' '}
-                                    Rating: { ratingStars(review?.rating) }{' '}
+                                    Rating: { ratingHearts(review?.rating) }{' '}
                                     </p>
                                     <p key='content'>
                                     {' '}

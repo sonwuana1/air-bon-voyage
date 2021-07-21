@@ -43,7 +43,7 @@ const ViewOneSpot = () => {
     return (
         <div className='upperSpotPageContainer'>
             <div className='titleContainer'>
-                <h2>{spotState.name}</h2>
+                <h2>💜 {spotState.name} 💜</h2>
             </div>
             <div>
                 <div className='carouselContainer'>

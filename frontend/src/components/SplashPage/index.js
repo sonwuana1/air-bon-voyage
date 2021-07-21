@@ -20,7 +20,7 @@ function Splash() {
 
     return (
         <div className='splashPageContainer'>
-            <h1 className='titleContainer'>Welcome to Air Bon Voyage!</h1>
+            <h1 className='titleContainer'>💜 Welcome to Air Bon Voyage! 💜</h1>
             <ViewAllSpots />
             <ViewAllBookings />
         </div>
