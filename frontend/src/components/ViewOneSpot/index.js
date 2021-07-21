@@ -57,7 +57,7 @@ const ViewOneSpot = () => {
                                     <img
                                     className="d-block "
                                     src={`${pic.link}/text=First slide&bg=373940`}
-                                    alt="First slide"
+                                    alt=""
                                     width={500}
                                     />
                                 </Carousel.Item>

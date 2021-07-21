@@ -37,7 +37,7 @@ module.exports = {
       {
         rating: 3,
         content: 'The breakfast was ok 😒',
-        user_id: 1,
+        user_id: 3,
         spot_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -93,7 +93,7 @@ module.exports = {
       {
         rating: 4,
         content: "The cabins are very luxurious. I can see why Jin loved it so much 😍",
-        user_id: 2,
+        user_id: 1,
         spot_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()

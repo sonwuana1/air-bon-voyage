@@ -3,37 +3,37 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Images', [{
-      link: 'https://www.scandichotels.com/imageVault/publishedmedia/pnlz1f64wtik70t1hltg/Standard_01.jpg',
+      link: 'https://i.imgur.com/mfEwQeb.jpeg',
       spot_id: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      link: 'https://www.scandichotels.com/imageVault/publishedmedia/rh07gxlgcepju29f981t/Scandic_Park_Juniorsuite_202_2.jpg',
+      link: 'https://i.imgur.com/l1peYh4.jpeg',
       spot_id: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      link: 'https://www.scandichotels.com/imageVault/publishedmedia/2vi1n14d4i7so99o6493/Bathroom_suite_01.jpg',
+      link: 'https://i.imgur.com/WiO1sTI.jpeg',
       spot_id: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      link: 'https://media.hrs.com/media/image/08/d1/08/First_Hotel_Fridhemsplan-Stockholm-Hotel_outdoor_area-546852.jpg',
+      link: 'https://i.imgur.com/I0fwpMw.jpeg',
       spot_id: 2,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      link: 'https://foto.hrsstatic.com/fotos/0/2/z/1553/100/FFFFFF/http%3A%2F%2Ffoto-origin.hrsstatic.com%2Ffoto%2F5%2F4%2F6%2F8%2F546852%2F546852_z33_12760369.jpg/4ThNIHUicjpbqYVDtTJwjQ%3D%3D/1505%2C776/6/First_Hotel_Fridhemsplan-Stockholm-Double_room_standard-2-546852.jpg',
+      link: 'https://i.imgur.com/YdB1O57.jpeg',
       spot_id: 2,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      link: 'https://foto.hrsstatic.com/fotos/0/2/z/1600/100/FFFFFF/http%3A%2F%2Ffoto-origin.hrsstatic.com%2Ffoto%2F5%2F4%2F6%2F8%2F546852%2F546852_fr_12564570.jpg/v1rFZNOIQgnguhjcS%2BT3wg%3D%3D/3501%2C2751/6/First_Hotel_Fridhemsplan-Stockholm-Breakfast_room-546852.jpg',
+      link: 'https://i.imgur.com/FZQDzMM.jpeg',
       spot_id: 2,
       createdAt: new Date(),
       updatedAt: new Date()

@@ -35,7 +35,7 @@ const ViewAllReviews = () => {
                                     </p>
                                     <p key='content'>
                                     {' '}
-                                    Rating: {review?.content}{' '}
+                                    {review?.content}{' '}
                                     </p>
                                     <footer >
                                         <EditReview props={{review}}/>
