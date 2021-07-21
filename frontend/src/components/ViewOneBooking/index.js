@@ -35,7 +35,7 @@ const ViewOneBooking = () => {
         <Container>
             <div>
                 <h2>Current Booking: </h2>
-                <h3>{bookingState.Spot?.name}</h3>
+                <h3>{bookingState?.Spot?.name}</h3>
                 <h3>{bookingState?.start_date} to {bookingState?.end_date}</h3>
                 <UpdateBooking />
                 <DeleteBooking />
