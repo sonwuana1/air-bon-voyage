@@ -29,7 +29,7 @@ function DeleteReview({ props }) {
 
     return (
         <div>
-            <Button variant="outline-danger" onClick={handleShow} disabled={props.review.User.id !== userState.id}>
+            <Button variant="outline-danger" onClick={handleShow} disabled={props?.review?.User?.id !== userState?.id}>
                 Delete Review
             </Button>
 
