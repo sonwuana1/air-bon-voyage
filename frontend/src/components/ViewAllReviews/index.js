@@ -46,8 +46,12 @@ const ViewAllReviews = () => {
                                     {review?.content}{' '}
                                     </p>
                                     <footer >
-                                        <EditReview props={{review}}/>
-                                        <DeleteReview props={{review}}/>
+                                        <p>
+                                            <EditReview props={{review}}/>
+                                        </p>
+                                        <p>
+                                            <DeleteReview props={{review}}/>
+                                        </p>
                                     </footer>
                                 </blockquote>
                             </Card.Body>
