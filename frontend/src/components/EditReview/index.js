@@ -41,7 +41,7 @@ const EditReview = ({props}) => {
 
     return(
         <div>
-            <Button variant="outline-info" onClick={handleShow} disabled={props.review.User.id !== userState.id}>
+            <Button variant="outline-info" onClick={handleShow} disabled={props?.review?.User?.id !== userState?.id}>
                 Edit Review
             </Button>{' '}
 

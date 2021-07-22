@@ -43,21 +43,18 @@ const ViewOneSpot = () => {
     return (
         <div className='upperSpotPageContainer'>
             <div className='titleContainer'>
-                <h2>{spotState.name}</h2>
+                <h2>💜 {spotState.name} 💜</h2>
             </div>
             <div>
                 <div className='carouselContainer'>
                     <Carousel>
                         {spotState.Images?.map(pic => {
                             return(
-                                // <Col>
-                                //     <img src={pic.link} alt='' width={400}></img>
-                                // </Col>
                                 <Carousel.Item interval={2500}>
                                     <img
                                     className="d-block "
                                     src={`${pic.link}/text=First slide&bg=373940`}
-                                    alt="First slide"
+                                    alt=""
                                     width={500}
                                     />
                                 </Carousel.Item>
@@ -65,16 +62,24 @@ const ViewOneSpot = () => {
                         })}
                     </Carousel>
                 </div>
-                <MyMaps props={{spotState}}/>
             </div>
-            <div className='spotPageContainer'>
-                <h3>{spotState.location}</h3>
-                <h4>${spotState.price} / night</h4>
-                <p>{spotState.description}</p>
-                <p>Number of guests: {spotState.num_of_guests}</p>
-                <p>Number of beds: {spotState.num_of_beds}</p>
-                <p>Number of baths: {spotState.num_of_baths}</p>
-            </div>
+            <Container>
+                <Row>
+                    <Col>
+                        <MyMaps props={{spotState}}/>
+                    </Col>
+                    <Col>
+                        <div className='spotPageContainer'>
+                            <h3>{spotState.location}</h3>
+                            <h4>${spotState.price} / night</h4>
+                            <p>{spotState.description}</p>
+                            <p>Number of guests: {spotState.num_of_guests}</p>
+                            <p>Number of beds: {spotState.num_of_beds}</p>
+                            <p>Number of baths: {spotState.num_of_baths}</p>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
 
             <div className='spotPageContainer'>
                 <h2>Book Today!</h2>

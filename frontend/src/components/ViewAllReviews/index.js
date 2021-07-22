@@ -14,6 +14,14 @@ const ViewAllReviews = () => {
     const reviewState = useSelector(state => Object.values(state.review))
     // console.log('REVIEWWWWWW', reviewState)
 
+    const ratingHearts = (num) => {
+        if (num === 1) return '💜'
+        if (num === 2) return '💜💜'
+        if (num === 3) return '💜💜💜'
+        if (num === 4) return '💜💜💜💜'
+        if (num === 5) return '💜💜💜💜💜'
+    }
+
 
     useEffect(() => {
         dispatch(ReviewsBySpotId(id))
@@ -31,15 +39,19 @@ const ViewAllReviews = () => {
                                 <blockquote className="blockquote mb-0">
                                     <p key='rating'>
                                     {' '}
-                                    Rating: {review?.rating}{' '}
+                                    Rating: { ratingHearts(review?.rating) }{' '}
                                     </p>
                                     <p key='content'>
                                     {' '}
-                                    Rating: {review?.content}{' '}
+                                    {review?.content}{' '}
                                     </p>
                                     <footer >
-                                        <EditReview props={{review}}/>
-                                        <DeleteReview props={{review}}/>
+                                        <p>
+                                            <EditReview props={{review}}/>
+                                        </p>
+                                        <p>
+                                            <DeleteReview props={{review}}/>
+                                        </p>
                                     </footer>
                                 </blockquote>
                             </Card.Body>

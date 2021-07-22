@@ -2,3 +2,8 @@
 /* .splashPageContainer {
     background: linear-gradient(white, #9370DB);
 } */
+
+.titleContainer {
+    font-style: italic;
+    color: #A020F0;
+}
