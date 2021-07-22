@@ -13,7 +13,7 @@ const ViewOneBooking = () => {
     const history = useHistory();
     const { id } = useParams();
     // console.log(id)
-    const bookingState = useSelector(state => state.booking)
+    const bookingState = useSelector(state => state.booking[id])
     // console.log('STATEEEEEEE', bookingState)
 
     const sessionUser = useSelector(state => state.session.user);
