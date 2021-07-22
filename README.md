@@ -11,14 +11,14 @@
 
 
 ### Login Page:
-![login-page](https://user-images.githubusercontent.com/69067446/125203239-7c7df500-e22c-11eb-9d73-44b46bf80e60.png)
+![Screen Shot 2021-07-22 at 4 34 46 PM](https://user-images.githubusercontent.com/69067446/126722095-f82dcb90-5af7-4ad9-89e6-dd3dc9659a2b.png)
 #
 
 ### Splash Page:
-![splash-page-1](https://user-images.githubusercontent.com/69067446/125203280-9f100e00-e22c-11eb-85d1-2daea5b66cb7.png)
+![Screen Shot 2021-07-22 at 4 35 37 PM](https://user-images.githubusercontent.com/69067446/126722186-c44d4b8a-b5f9-4df6-9bfb-bb86265819d3.png)
 #
 
 #### AirBonVoyage utilizes the [Google Maps Api](https://developers.google.com/maps) so that users can see their lodgings on a map and the surrounding area.
-![example-map-1](https://user-images.githubusercontent.com/69067446/125203305-b51dce80-e22c-11eb-9a50-3f2134d47686.png)
+![Screen Shot 2021-07-22 at 4 36 46 PM](https://user-images.githubusercontent.com/69067446/126722244-58f89aed-419b-497b-b4ed-bb6e28614585.png)
 #
 
