@@ -16,10 +16,10 @@ const ViewAllReviews = () => {
 
     const ratingHearts = (num) => {
         if (num === 1) return '💜'
-        if (num === 2) return '💜💜'
-        if (num === 3) return '💜💜💜'
-        if (num === 4) return '💜💜💜💜'
-        if (num === 5) return '💜💜💜💜💜'
+        if (num === 2) return '💜 💜'
+        if (num === 3) return '💜 💜 💜'
+        if (num === 4) return '💜 💜 💜 💜'
+        if (num === 5) return '💜 💜 💜 💜 💜'
     }
 
 
@@ -39,7 +39,7 @@ const ViewAllReviews = () => {
                                 <blockquote className="blockquote mb-0">
                                     <p key='rating'>
                                     {' '}
-                                    Rating: { ratingHearts(review?.rating) }{' '}
+                                    { ratingHearts(review?.rating) }{' '}
                                     </p>
                                     <p key='content'>
                                     {' '}
