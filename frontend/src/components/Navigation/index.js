@@ -4,6 +4,7 @@ import * as sessionActions from '../../store/session';
 import './Navigation.css';
 import { Navbar, Nav } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
+import Icon from './icons8-airplane-take-off-64.png'
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
@@ -50,6 +51,20 @@ function Navigation({ isLoaded }){
       </Navbar.Text> */}
       {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav"> */}
+      <Navbar.Brand>
+        <img
+          src={Icon}
+          width="30"
+          height="30"
+          className="d-inline-block align-top"
+          alt=""
+          style={{ position: 'absolute',
+            left: '50%',
+            bottom: '25%',
+            marginLeft: '-50px',
+            display: 'block'}}
+        />
+      </Navbar.Brand>
         <Nav className="mr-auto">
           {isLoaded && sessionLinks}
           <Nav.Link href="/">Home</Nav.Link>
