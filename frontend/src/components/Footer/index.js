@@ -11,7 +11,6 @@ function Footer() {
                 <Navbar.Brand href="https://github.com/sonwuana1" className="text-center"
                 style={{ position: 'relative',
                 left: '50%',
-
                 marginLeft: '-50px',
                 display: 'block'}}
                 >
