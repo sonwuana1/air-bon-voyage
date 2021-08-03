@@ -5,6 +5,8 @@ import { getOneBooking } from '../../store/booking';
 import UpdateBooking from '../UpdateBooking';
 import DeleteBooking from '../DeleteBooking';
 import Container from 'react-bootstrap/Container'
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 
 
@@ -35,10 +37,22 @@ const ViewOneBooking = () => {
         <Container>
             <div>
                 <h2>Current Booking: </h2>
-                <h3>{bookingState?.Spot?.name}</h3>
-                <h3>{bookingState?.start_date} to {bookingState?.end_date}</h3>
-                <UpdateBooking />
-                <DeleteBooking />
+                <Row>
+                    <Col>
+                        <h3>{bookingState?.Spot?.name}</h3>
+                        <h3>{bookingState?.start_date} to {bookingState?.end_date}</h3>
+                        <UpdateBooking />
+                        <DeleteBooking />
+                    </Col>
+                    <Col>
+                        <img
+                        src="https://i.imgur.com/VJpw6sy.jpeg"
+                        alt=""
+                        width="500px"
+                        height="300px"
+                        ></img>
+                    </Col>
+                </Row>
             </div>
         </Container>
     )
