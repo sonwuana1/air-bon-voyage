@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getAllSpots } from '../../store/spot';
+import { getAllImages } from '../../store/image'
 import Container from 'react-bootstrap/Container'
 
 
@@ -11,10 +12,13 @@ const ViewAllSpots = () => {
     const dispatch = useDispatch()
     const spotState = useSelector(state => Object.values(state.spot))
     // console.log('STATEEEEEEE', spotState)
+    const imageState = useSelector(state => Object.values(state.image))
+    // console.log('imageeeeee', imageState)
 
 
     useEffect(() => {
         dispatch(getAllSpots())
+        dispatch(getAllImages())
     }, [dispatch])
 
 
@@ -27,7 +31,9 @@ const ViewAllSpots = () => {
                         <div className="card mb-3" >
                             <div className="row no-gutters">
                                 <div className="col-md-4">
-                                    <img src={obj?.Images[0]?.link} className="card-img" alt="..." />
+                                    {obj?.Images ?
+                                        <img src={obj?.Images[0]?.link} className="card-img" alt="..." />
+                                    : null }
                                 </div>
                                 <div className="col-md-8">
                                     <div className="card-body">
