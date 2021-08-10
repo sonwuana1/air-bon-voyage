@@ -60,7 +60,7 @@ const CreateReview = () => {
                             </Form.Group>
                             <Form.Group controlId="formText">
                                 <Form.Label>Review</Form.Label>
-                                <Form.Control as="textarea" rows={3} value={content} onChange={(e) => setContent(e.target.value)} />
+                                <Form.Control as="textarea" name="reviewContent" rows={3} value={content} onChange={(e) => setContent(e.target.value)} />
                             </Form.Group>
                             <Button variant="outline-primary" type="submit" onClick={handleClose}>Submit</Button>
                         </Form>

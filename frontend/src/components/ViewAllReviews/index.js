@@ -13,6 +13,8 @@ const ViewAllReviews = () => {
     // console.log('another id', id)
     const reviewState = useSelector(state => Object.values(state.review))
     // console.log('REVIEWWWWWW', reviewState)
+    const userState = useSelector(state => state.session.user)
+    // console.log('session', userState)
 
     const ratingHearts = (num) => {
         if (num === 1) return '💜'
@@ -46,12 +48,22 @@ const ViewAllReviews = () => {
                                     {review?.content}{' '}
                                     </p>
                                     <footer >
-                                        <p>
+                                        {review.user_id == userState?.id ?
+                                            <div>
+                                                <p>
+                                                    <EditReview props={{review}}/>
+                                                </p>
+                                                <p>
+                                                    <DeleteReview props={{review}}/>
+                                                </p>
+                                            </div>
+                                        : null }
+                                        {/* <p>
                                             <EditReview props={{review}}/>
                                         </p>
                                         <p>
-                                            <DeleteReview props={{review}}/>
-                                        </p>
+                                           <DeleteReview props={{review}}/>
+                                        </p> */}
                                     </footer>
                                 </blockquote>
                             </Card.Body>
