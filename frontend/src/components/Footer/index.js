@@ -8,13 +8,15 @@ function Footer() {
     return (
         <Navbar sticky="bottom" className="justify-content-center" expand="lg" variant="light" bg="light">
             <Container>
-                <Navbar.Brand href="https://github.com/sonwuana1" className="text-center"
+                <Navbar.Brand className="text-center"
                 style={{ position: 'relative',
-                left: '50%',
+                left: '35%',
                 marginLeft: '-50px',
                 display: 'block'}}
                 >
-                    About The Developer
+                    About The Developer:
+                    {' '}<a href="https://github.com/sonwuana1">GitHub</a> |
+                    <a href="https://www.linkedin.com/in/sylvia-o/"> LinkedIn</a>
                 </Navbar.Brand>
             </Container>
         </Navbar>
