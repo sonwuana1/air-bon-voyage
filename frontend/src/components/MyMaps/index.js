@@ -120,7 +120,7 @@ const { isLoaded } = useJsApiLoader({
         },
     ];
 
-    const newCenter = locations.find(item => item.id === props.spotState.id)?.location
+    const newCenter = locations.find(item => item.id === props?.spotState[0]?.id)?.location
     // console.log(newCenter)
 
 

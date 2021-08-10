@@ -63,17 +63,15 @@ const spotReducer = (state = initialState, action) => {
         });
         return newState;
     case ADD_ONE_SPOT:
-        // if (!state[action.spot.id]) {
-        //     const newState = { ...state, [action.spot.id]: action.spot }
-        //     return newState;
-        // }
-        // return {
-        //     ...state, ...state[action.spot?.id], ...action.spot
-        // }
-        newState = { ...state };
-        newState[action.spot.id] = action.spot;
+      if (!state[action.spot.id]) {
+        newState = { ...state }
+        newState[action.spot.id] = action.spot
         return newState;
-
+      }
+      newState = { ...state }
+      return {
+          ...newState, ...newState[action.spot?.id], ...action.spot
+      }
     default:
       return state;
   }
