@@ -15,3 +15,9 @@
     justify-content: center;
     padding: 25px;
 }
+
+.bookingPageContainer {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
