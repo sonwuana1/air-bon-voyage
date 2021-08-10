@@ -69,9 +69,9 @@ const spotReducer = (state = initialState, action) => {
         return newState;
       }
       newState = { ...state }
-      return {
-          ...newState, ...newState[action.spot?.id], ...action.spot
-      }
+      // return {
+      //     ...newState, ...newState[action.spot?.id], ...action.spot
+      // }
     default:
       return state;
   }
