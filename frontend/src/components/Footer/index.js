@@ -10,12 +10,12 @@ function Footer() {
             <Container>
                 <Navbar.Brand className="text-center"
                 style={{ position: 'relative',
-
+                left: '35%',
                 marginLeft: '-50px',
                 display: 'block'}}
                 >
                     About The Developer:
-                    <a href="https://github.com/sonwuana1">GitHub</a> |
+                    {' '}<a href="https://github.com/sonwuana1">GitHub</a> |
                     <a href="https://www.linkedin.com/in/sylvia-o/"> LinkedIn</a>
                 </Navbar.Brand>
             </Container>
