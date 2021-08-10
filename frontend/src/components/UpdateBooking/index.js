@@ -62,6 +62,8 @@ const UpdateBooking = () => {
                             }}
                             focusedInput={focusedInput}
                             onFocusChange={focusedInput => setfocusedInput(focusedInput )}
+                            required
+                            showDefaultInputIcon
                         />
                         <Button variant="primary" type="submit">
                             Update!

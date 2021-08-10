@@ -64,8 +64,10 @@ const CreateBooking = () => {
                             }}
                             focusedInput={focusedInput}
                             onFocusChange={focusedInput => setfocusedInput(focusedInput )}
+                            required
+                            showDefaultInputIcon
                         />
-                        <Button variant="primary" type="submit">
+                        {' '}<Button variant="primary" type="submit">
                             Book It!
                         </Button>
                     </Col>

@@ -81,8 +81,8 @@ const ViewOneSpot = () => {
                 </Row>
             </Container>
 
-            <div className='spotPageContainer'>
-                <h2>Book Today!</h2>
+            <div className='bookingPageContainer'>
+                <h2>Book Today:</h2>
                 <CreateBooking />
             </div>
             <div className='spotPageContainer'>
