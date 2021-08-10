@@ -20,8 +20,8 @@ const ViewOneSpot = () => {
     const history = useHistory();
     const { id } = useParams();
     // console.log(id)
-    const spotState = useSelector(state => Object.values(state.spot))
-    console.log('STATEEEEEEE', spotState[0])
+    const spotState = useSelector(state => state?.spot[id])
+    console.log('STATEEEEEEE', spotState)
 
     const sessionUser = useSelector(state => state.session.user);
     // console.log(sessionUser)
@@ -43,17 +43,17 @@ const ViewOneSpot = () => {
     return (
         <div className='upperSpotPageContainer'>
             <div className='titleContainer'>
-                <h2>💜 {spotState[0]?.name} 💜</h2>
+                <h2>💜 {spotState?.name} 💜</h2>
             </div>
             <div>
                 <div className='carouselContainer'>
                     <Carousel>
-                        {spotState[0]?.Images?.map(pic => {
+                        {spotState?.Images?.map(pic => {
                             return(
                                 <Carousel.Item interval={2500}>
                                     <img
                                     className="d-block "
-                                    src={`${pic.link}/text=First slide&bg=373940`}
+                                    src={`${pic?.link}/text=First slide&bg=373940`}
                                     alt=""
                                     width={500}
                                     />
@@ -70,12 +70,12 @@ const ViewOneSpot = () => {
                     </Col>
                     <Col>
                         <div className='spotPageContainer'>
-                            <h3>{spotState[0]?.location}</h3>
-                            <h4>${spotState[0]?.price} / night</h4>
-                            <p>{spotState[0]?.description}</p>
-                            <p>Number of guests: {spotState[0]?.num_of_guests}</p>
-                            <p>Number of beds: {spotState[0]?.num_of_beds}</p>
-                            <p>Number of baths: {spotState[0]?.num_of_baths}</p>
+                            <h3>{spotState?.location}</h3>
+                            <h4>${spotState?.price} / night</h4>
+                            <p>{spotState?.description}</p>
+                            <p>Number of guests: {spotState?.num_of_guests}</p>
+                            <p>Number of beds: {spotState?.num_of_beds}</p>
+                            <p>Number of baths: {spotState?.num_of_baths}</p>
                         </div>
                     </Col>
                 </Row>
