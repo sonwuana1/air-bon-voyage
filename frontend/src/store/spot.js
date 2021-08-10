@@ -67,12 +67,12 @@ const spotReducer = (state = initialState, action) => {
         //     const newState = { ...state, [action.spot.id]: action.spot }
         //     return newState;
         // }
-        return {
-            ...state, ...state[action.spot?.id], ...action.spot
-        }
-        // newState = { ...state };
-        // newState.spot = action.payload;
-        // return newState;
+        // return {
+        //     ...state, ...state[action.spot?.id], ...action.spot
+        // }
+        newState = { ...state };
+        newState[action.spot.id] = action.spot;
+        return newState;
 
     default:
       return state;

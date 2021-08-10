@@ -20,8 +20,8 @@ const ViewOneSpot = () => {
     const history = useHistory();
     const { id } = useParams();
     // console.log(id)
-    const spotState = useSelector(state => state.spot)
-    // console.log('STATEEEEEEE', spotState)
+    const spotState = useSelector(state => Object.values(state.spot))
+    console.log('STATEEEEEEE', spotState)
 
     const sessionUser = useSelector(state => state.session.user);
     // console.log(sessionUser)
