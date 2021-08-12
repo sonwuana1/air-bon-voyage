@@ -50,8 +50,29 @@ To get a copy of this project up and running locally, please follow these simple
    JWT_SECRET=«generate_strong_secret_here»
    JWT_EXPIRES_IN=604800
    ```
-5. Get a free Google Maps API Key at [console.cloud.google.com](https://console.cloud.google.com/)
-6. Store your API key in your frontend `.env` file
+4. Create a user using the same credentials in the .env file with the ability to create databases:
+   ```sh
+   psql -c "CREATE USER <username> PASSWORD '<password>' CREATEDB"
+   ```
+5. Create the database using `sequelize-cli`:
+   ```
+   npx dotenv sequelize db:create
+   ```
+6. Migrate all tables by running the following command:
+   ```
+   npx dotenv sequelize db:migrate
+   ```
+7. Migrate all seed files by running the following command:
+   ```
+   npx dotenv sequelize db:seed:all
+   ```
+9. Command to undo migrations and seeders:
+   ```
+   npx dotenv sequelize db:migrate:undo
+   npx dotenv sequelize db:seed:undo
+   ```
+9. Get a free Google Maps API Key at [console.cloud.google.com](https://console.cloud.google.com/)
+10. Store your API key in your frontend `.env` file
    ```JS
    REACT_APP_BASE_URL=http://localhost:5000
    REACT_APP_MAPS_KEY=GOOGLEAPIKEY
