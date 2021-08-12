@@ -98,5 +98,5 @@ Sylvia Onwuana - [LinkedIn](https://www.linkedin.com/in/sylvia-o/) - sonwuana1@g
 Project Link: [https://github.com/sonwuana1/air-bon-voyage](https://github.com/sonwuana1/air-bon-voyage)
 
 ## Acknowledgements
-* [BTS](https://www.weverse.io/bts/artist) for being my constant inspiration to follow my dreams 💜
+* [BTS](https://youtu.be/5aPe9Uy10n4?t=420) for being my constant inspiration to follow my dreams 💜
 * [Font Awesome](https://fontawesome.com)
