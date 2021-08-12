@@ -66,7 +66,7 @@ To get a copy of this project up and running locally, please follow these simple
    ```
    npx dotenv sequelize db:seed:all
    ```
-9. Command to undo migrations and seeders:
+8. Command to undo migrations and seeders:
    ```
    npx dotenv sequelize db:migrate:undo
    npx dotenv sequelize db:seed:undo
@@ -81,15 +81,22 @@ To get a copy of this project up and running locally, please follow these simple
 
 ### Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+Aside from creating and viewing bookings, users can also create reviews for spots (as well as edit and delete them) and view reviews from other users.
 
 #### Splash Page:
 ![Screen Shot 2021-07-22 at 4 35 37 PM](https://user-images.githubusercontent.com/69067446/126722186-c44d4b8a-b5f9-4df6-9bfb-bb86265819d3.png)
 
 #### Google Maps:
-#### AirBonVoyage utilizes the [Google Maps Api](https://developers.google.com/maps) so that users can see their lodgings on a map and the surrounding area.
+#### AirBonVoyage utilizes the [Google Maps Api](https://developers.google.com/maps) so that users can see  a map of the location and it's surrounding area.
 ![Screen Shot 2021-07-22 at 4 36 46 PM](https://user-images.githubusercontent.com/69067446/126722244-58f89aed-419b-497b-b4ed-bb6e28614585.png)
 #
 
+## Contact
+
+Sylvia Onwuana - [LinkedIn](https://www.linkedin.com/in/sylvia-o/) - sonwuana1@gmail.com
+
+Project Link: [https://github.com/sonwuana1/air-bon-voyage](https://github.com/sonwuana1/air-bon-voyage)
+
+## Acknowledgements
+* [BTS](https://www.weverse.io/bts/artist) for being my constant inspiration to follow my dreams 💜
+* [Font Awesome](https://fontawesome.com)
