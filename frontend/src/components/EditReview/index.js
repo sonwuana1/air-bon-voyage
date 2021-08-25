@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button'
 
 
 const EditReview = ({props}) => {
-    // console.log(props)
+    console.log(props.review)
     // console.log(props.review.User.id)
     const dispatch = useDispatch();
     // const history = useHistory();
@@ -23,8 +23,8 @@ const EditReview = ({props}) => {
     // console.log('reviewState', reviewState)
 
 
-    const [rating, setRating] = useState();
-    const [content, setContent] = useState('');
+    const [rating, setRating] = useState(props.review.rating);
+    const [content, setContent] = useState(props.review.content);
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
