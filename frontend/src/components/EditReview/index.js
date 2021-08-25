@@ -40,7 +40,7 @@ const EditReview = ({props}) => {
 
     return(
         <div>
-            <Button variant="outline-info" onClick={handleShow} disabled={props?.review?.User?.id !== userState?.id}>
+            <Button variant="outline-info" onClick={handleShow} >
                 Edit Review
             </Button>{' '}
 
@@ -56,7 +56,7 @@ const EditReview = ({props}) => {
                         <Form onSubmit={handleOnSubmit}>
                             <Form.Group controlId="formInteger">
                                 <Form.Label>Rating</Form.Label>
-                                <Form.Control as="select" value={rating} onChange={(e) => setRating(e.target.value)} required>
+                                <Form.Control as="select" value={rating} onChange={(e) => setRating(e.target.value)} >
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -66,7 +66,7 @@ const EditReview = ({props}) => {
                             </Form.Group>
                             <Form.Group controlId="formText">
                                 <Form.Label>Review</Form.Label>
-                                <Form.Control as="textarea" name="reviewContent" rows={3} value={content} onChange={(e) => setContent(e.target.value)} placeholder={props.review.content} />
+                                <Form.Control as="textarea" name="reviewContent" rows={3} value={content} onChange={(e) => setContent(e.target.value)}  />
                             </Form.Group>
                             <Button variant="outline-primary" type="submit" onClick={handleClose}>Update</Button>
                         </Form>
