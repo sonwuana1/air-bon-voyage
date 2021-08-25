@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button'
 
 
 const EditReview = ({props}) => {
-    console.log(props.review)
+    // console.log(props.review)
     // console.log(props.review.User.id)
     const dispatch = useDispatch();
     // const history = useHistory();
@@ -66,7 +66,7 @@ const EditReview = ({props}) => {
                             </Form.Group>
                             <Form.Group controlId="formText">
                                 <Form.Label>Review</Form.Label>
-                                <Form.Control as="textarea" name="reviewContent" rows={3} value={content} onChange={(e) => setContent(e.target.value)}  />
+                                <Form.Control as="textarea" name="reviewContent" rows={3} value={content} onChange={(e) => setContent(e.target.value)} />
                             </Form.Group>
                             <Button variant="outline-primary" type="submit" onClick={handleClose}>Update</Button>
                         </Form>
