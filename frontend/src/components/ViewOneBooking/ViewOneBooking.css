@@ -4,3 +4,14 @@
     justify-content: center;
     padding: 20px;
 }
+
+.bookingInfo {
+    /* display: grid; */
+    /* justify-content: center; */
+    margin-top: 70px;
+    margin-bottom: 10px;
+}
+
+.imageContainer {
+    margin: 20px;
+}

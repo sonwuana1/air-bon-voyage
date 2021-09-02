@@ -39,11 +39,17 @@ const ViewOneBooking = () => {
             <div>
                 <h2 className='bookingTitle'>Current Booking: </h2>
                 <Row>
-                    <Col>
-                        <h3>{bookingState?.Spot?.name}</h3>
-                        <h3>{bookingState?.start_date} to {bookingState?.end_date}</h3>
-                        <UpdateBooking />
-                        <DeleteBooking />
+                    <Col className='bookingContainer'>
+                        <div className='bookingInfo'>
+                            <h3>{bookingState?.Spot?.name}</h3>
+                            <h3>{bookingState?.start_date} to {bookingState?.end_date}</h3>
+                        </div>
+                        <div>
+                            <UpdateBooking />
+                        </div>
+                        <div>
+                            <DeleteBooking />
+                        </div>
                     </Col>
                     <Col>
                         <img
@@ -51,6 +57,7 @@ const ViewOneBooking = () => {
                         alt=""
                         width="500px"
                         height="300px"
+                        className="imageContainer"
                         ></img>
                     </Col>
                 </Row>

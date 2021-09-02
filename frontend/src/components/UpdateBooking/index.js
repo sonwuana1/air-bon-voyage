@@ -65,7 +65,7 @@ const UpdateBooking = () => {
                             required
                             showDefaultInputIcon
                         />
-                        <Button variant="primary" type="submit">
+                        <Button variant="primary" type="submit" className="mt-2 mb-2">
                             Update!
                         </Button>
                     </Col>
