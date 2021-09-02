@@ -4,6 +4,7 @@ import { NavLink, useHistory } from 'react-router-dom';
 import { getAllBookings } from '../../store/booking';
 import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
+import './ViewAllBookings.css'
 
 
 const ViewAllBookings = () => {
@@ -24,8 +25,8 @@ const ViewAllBookings = () => {
     }, [dispatch])
 
     return (
-        <div>
-            <Container >
+        <div className="bookingsContainer">
+            <Container>
                 <h2 className="text-center">Current Bookings: </h2>
                 {bookingState?.map(obj => {
                     return(

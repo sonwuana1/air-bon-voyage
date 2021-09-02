@@ -7,6 +7,7 @@ import DeleteBooking from '../DeleteBooking';
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import './ViewOneBooking.css'
 
 
 
@@ -36,13 +37,19 @@ const ViewOneBooking = () => {
     return (
         <Container>
             <div>
-                <h2>Current Booking: </h2>
+                <h2 className='bookingTitle'>Current Booking: </h2>
                 <Row>
-                    <Col>
-                        <h3>{bookingState?.Spot?.name}</h3>
-                        <h3>{bookingState?.start_date} to {bookingState?.end_date}</h3>
-                        <UpdateBooking />
-                        <DeleteBooking />
+                    <Col className='bookingContainer'>
+                        <div className='bookingInfo'>
+                            <h3>{bookingState?.Spot?.name}</h3>
+                            <h3>{bookingState?.start_date} to {bookingState?.end_date}</h3>
+                        </div>
+                        <div>
+                            <UpdateBooking />
+                        </div>
+                        <div>
+                            <DeleteBooking />
+                        </div>
                     </Col>
                     <Col>
                         <img
@@ -50,6 +57,7 @@ const ViewOneBooking = () => {
                         alt=""
                         width="500px"
                         height="300px"
+                        className="imageContainer"
                         ></img>
                     </Col>
                 </Row>
