@@ -20,8 +20,6 @@ function Footer() {
                     {' '}<a href="https://github.com/sonwuana1">
                         <img
                         src={Icon1}
-                        // width="30"
-                        // height="30"
                         // className="d-inline-block align-top"
                         alt=""
                         />
