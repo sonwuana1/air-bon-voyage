@@ -87,7 +87,7 @@ Aside from creating and viewing bookings, users can also create reviews for spot
 ![Screen Shot 2021-07-22 at 4 35 37 PM](https://user-images.githubusercontent.com/69067446/126722186-c44d4b8a-b5f9-4df6-9bfb-bb86265819d3.png)
 
 #### Google Maps:
-#### AirBonVoyage utilizes the [Google Maps Api](https://developers.google.com/maps) so that users can see  a map of the location and it's surrounding area.
+#### AirBonVoyage utilizes the [Google Maps Api](https://developers.google.com/maps) to render live-syncing maps tailored to each location, creating a robust tool to allow users to preview locations and interact with their surrounding areas.
 ![7YnNyCv - Imgur](https://user-images.githubusercontent.com/69067446/135693091-d039b675-577c-42c7-9c0b-98b6d76c8176.png)
 #
 
