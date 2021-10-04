@@ -67,7 +67,7 @@ const CreateBooking = () => {
                             required
                             showDefaultInputIcon
                         />
-                        {' '}<Button variant="primary" type="submit">
+                        {' '}<Button variant="outline-primary" type="submit">
                             Book It!
                         </Button>
                     </Col>
